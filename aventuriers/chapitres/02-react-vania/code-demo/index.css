@@ -1,0 +1,389 @@
+/* 🎨 Thème du cours : « La console arcanique »
+   Copie ce fichier à la place de src/index.css : il remplace le style du template Vite.
+   Tu n'as RIEN à comprendre ici : c'est juste pour que la taverne soit belle.
+   (Les polices viennent de Google Fonts : il faut Internet la première fois.) */
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Rajdhani:wght@500;700&display=swap");
+
+:root {
+  color-scheme: dark;
+
+  /* Palette : encre bleue, panneaux ardoise, filets cyan, or des runes, braise pour l'alerte */
+  --ink: #070d17;
+  --panel: #101e33;
+  --panel-raised: #172b47;
+  --field: #0a1626;
+  --cyan: #5ad2e6;
+  --cyan-dim: #2f7f93;
+  --gold: #e6b84a;
+  --gold-ink: #1a1405;
+  --ember: #ff8f7a;
+  --text: #e6f1f7;
+  --muted: #8fb4c6;
+  --slate: #4a5b6b;
+
+  --font-display: "Cinzel", Georgia, serif;
+  --font-body: "Rajdhani", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --cut: 16px; /* taille des coins coupés */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.45;
+  font-variant-numeric: tabular-nums;
+  accent-color: var(--cyan);
+  scrollbar-color: #2b4a66 var(--ink);
+  scrollbar-width: thin;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--gold-ink);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--ink);
+  background-image:
+    radial-gradient(circle, rgba(90, 210, 230, 0.12) 0 1.5px, transparent 2px),
+    radial-gradient(ellipse 900px 380px at 50% -6%, rgba(230, 184, 74, 0.13), transparent 70%),
+    linear-gradient(var(--ink), #0a1424);
+  background-size: 34px 34px, auto, auto;
+  color: var(--text);
+  caret-color: var(--gold);
+}
+
+#root {
+  width: min(1040px, 100%);
+  margin: 0 auto;
+  padding: clamp(1.25rem, 4vw, 2.5rem) clamp(1rem, 4vw, 1.5rem) 3rem;
+  box-sizing: border-box;
+}
+
+/* ---------- Titres ---------- */
+
+h1,
+h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--gold);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(1.9rem, 5vw, 3.1rem);
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.5rem;
+}
+
+/* Ornement : un filet d'or avec un losange au centre, dessiné en CSS sous le titre */
+h1::after {
+  content: "";
+  display: block;
+  width: min(100%, 26rem);
+  height: 12px;
+  margin-top: 0.7rem;
+  background: var(--gold);
+  clip-path: polygon(
+    0 40%,
+    calc(50% - 12px) 40%,
+    50% 0,
+    calc(50% + 12px) 40%,
+    100% 40%,
+    100% 60%,
+    calc(50% + 12px) 60%,
+    50% 100%,
+    calc(50% - 12px) 60%,
+    0 60%
+  );
+}
+
+h2 {
+  font-size: 1.55rem;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  margin: 0 0 0.25rem;
+}
+
+p {
+  margin: 0 0 0.75rem;
+  max-width: 70ch;
+}
+
+.subtitle {
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+}
+
+/* ---------- Panneau : ardoise opaque, filet cyan, deux coins coupés ----------
+   La forme est portée par des pseudo-éléments pour que l'ombre portée (filter)
+   suive les coins coupés et ne soit pas rognée. */
+
+.card {
+  --edge: var(--cyan-dim);
+  --shape: polygon(
+    0 var(--cut),
+    var(--cut) 0,
+    100% 0,
+    100% calc(100% - var(--cut)),
+    calc(100% - var(--cut)) 100%,
+    0 100%
+  );
+  position: relative;
+  isolation: isolate;
+  margin: 1.25rem 0;
+  padding: 1.25rem 1.5rem 1.35rem;
+  filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.45));
+  transition: opacity 0.4s var(--ease-out), filter 0.4s var(--ease-out);
+}
+
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  clip-path: var(--shape);
+}
+
+.card::before {
+  inset: 0;
+  background: var(--edge);
+}
+
+.card::after {
+  inset: 1px;
+  background: var(--panel);
+  /* même découpe, rentrée d'un pixel : le filet garde une épaisseur égale sur les diagonales */
+  clip-path: polygon(
+    0 calc(var(--cut) - 0.59px),
+    calc(var(--cut) - 0.59px) 0,
+    100% 0,
+    100% calc(100% - var(--cut) + 0.59px),
+    calc(100% - var(--cut) + 0.59px) 100%,
+    0 100%
+  );
+}
+
+.card ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}
+
+li::marker {
+  color: var(--cyan);
+}
+
+em {
+  font-style: normal;
+  color: var(--muted);
+}
+
+/* ---------- Barre de santé : des cellules obliques, comptées ---------- */
+
+.bar {
+  height: 18px;
+  margin: 0.6rem 0 1rem;
+  background: rgba(90, 210, 230, 0.16);
+  transform: skewX(-20deg);
+  -webkit-mask-image: repeating-linear-gradient(90deg, #000 0 calc(10% - 4px), transparent calc(10% - 4px) 10%);
+  mask-image: repeating-linear-gradient(90deg, #000 0 calc(10% - 4px), transparent calc(10% - 4px) 10%);
+}
+
+.bar-fill {
+  height: 100%;
+  background: var(--cyan);
+  transition: width 0.6s var(--ease-out);
+  /* À l'apparition d'une carte, les cellules s'allument de gauche à droite */
+  animation: cells-in 0.9s var(--ease-out) both;
+}
+
+@keyframes cells-in {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0);
+  }
+}
+
+/* Santé critique : la cellule passe à la braise (le texte d'alerte l'accompagne toujours) */
+.card:has(.warning) .bar-fill {
+  background: var(--ember);
+}
+
+.warning {
+  color: var(--ember);
+  font-weight: 700;
+}
+
+/* ---------- État K.O. : plus aucune cellule allumée, filet ardoise ---------- */
+
+.card.ko {
+  --edge: var(--slate);
+}
+
+.card.ko h2 {
+  color: var(--muted);
+}
+
+/* ---------- Boutons : parallélogrammes, un seul principal (l'or) ---------- */
+
+button {
+  position: relative;
+  isolation: isolate;
+  appearance: none;
+  border: 0;
+  background: none;
+  margin: 0;
+  padding: 0.45rem 0.95rem;
+  font: inherit;
+  white-space: nowrap;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--cyan);
+  cursor: pointer;
+  transition: color 0.2s var(--ease-out), transform 0.2s var(--ease-out);
+}
+
+button::before,
+button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+}
+
+button::before {
+  inset: 0;
+  background: var(--cyan);
+}
+
+button::after {
+  inset: 1px;
+  background: var(--panel);
+  clip-path: polygon(9px 0, 100% 0, calc(100% - 9px) 100%, 0 100%);
+  transition: background 0.2s var(--ease-out);
+}
+
+button:hover:not(:disabled)::after {
+  background: var(--panel-raised);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+/* Le principal : « Soigner » dans une carte, et tout bouton d'envoi de formulaire */
+button[type="submit"],
+.actions button:nth-child(2) {
+  color: var(--gold-ink);
+}
+
+button[type="submit"]::before,
+.actions button:nth-child(2)::before {
+  background: var(--gold);
+}
+
+button[type="submit"]::after,
+.actions button:nth-child(2)::after {
+  background: var(--gold);
+}
+
+button[type="submit"]:hover:not(:disabled)::after,
+.actions button:nth-child(2):hover:not(:disabled)::after {
+  background: #f2c963;
+}
+
+/* Désactivé : barré d'un trait et en retrait, jamais seulement grisé */
+button:disabled {
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  cursor: not-allowed;
+}
+
+button:disabled::before {
+  background: var(--slate);
+}
+
+button:disabled::after {
+  background: var(--panel);
+}
+
+/* Le bouton principal désactivé recule lui aussi (sinon il resterait doré, donc d'apparence active) */
+button[type="submit"]:disabled,
+.actions button:nth-child(2):disabled {
+  color: var(--muted);
+}
+
+button[type="submit"]:disabled::before,
+.actions button:nth-child(2):disabled::before {
+  background: var(--slate);
+}
+
+button[type="submit"]:disabled::after,
+.actions button:nth-child(2):disabled::after {
+  background: var(--panel);
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+/* ---------- Champs ---------- */
+
+label {
+  font-weight: 700;
+}
+
+input,
+select {
+  font: inherit;
+  color: var(--text);
+  background: var(--field);
+  border: 0;
+  border-bottom: 2px solid var(--cyan);
+  border-radius: 0;
+  padding: 0.45rem 0.7rem;
+  min-width: 0;
+}
+
+input::placeholder {
+  color: #7da0b2;
+}
+
+input:focus,
+select:focus {
+  border-bottom-color: var(--gold);
+}
+
+/* ---------- Pied de page ---------- */
+
+footer {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--cyan-dim);
+  color: var(--muted);
+  font-size: 1rem;
+  text-align: center;
+}
+
+footer p {
+  margin: 0 auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

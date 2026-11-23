@@ -1,0 +1,423 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-23T14:46:56.504675+00:00",
+  "title": "Design System: React.js pour les aventuriers (demos)",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#070d17",
+        "tonalRamp": [
+          "#020406",
+          "#04070d",
+          "#060b13",
+          "#1e242d",
+          "#4d5259",
+          "#7c7f85",
+          "#abadb0",
+          "#c7c8cb"
+        ]
+      },
+      "ink-lower": {
+        "role": "neutral",
+        "displayName": "Ink Lower",
+        "canonical": "#0a1424",
+        "tonalRamp": [
+          "#03050a",
+          "#050b14",
+          "#08101d",
+          "#212a39",
+          "#4f5762",
+          "#7e838b",
+          "#acafb5",
+          "#c8cace"
+        ]
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Slate Panel",
+        "canonical": "#101e33",
+        "tonalRamp": [
+          "#04080e",
+          "#09101c",
+          "#0d192a",
+          "#273346",
+          "#545e6d",
+          "#818893",
+          "#aeb3ba",
+          "#c9ccd1"
+        ]
+      },
+      "panel-raised": {
+        "role": "neutral",
+        "displayName": "Raised Panel",
+        "canonical": "#172b47",
+        "tonalRamp": [
+          "#060c13",
+          "#0d1727",
+          "#13233a",
+          "#2d3f58",
+          "#59677b",
+          "#858f9e",
+          "#b0b7c1",
+          "#cbcfd5"
+        ]
+      },
+      "field": {
+        "role": "neutral",
+        "displayName": "Field",
+        "canonical": "#0a1626",
+        "tonalRamp": [
+          "#03060a",
+          "#050c15",
+          "#08121f",
+          "#212c3a",
+          "#4f5863",
+          "#7e848c",
+          "#acb0b5",
+          "#c8cace"
+        ]
+      },
+      "cyan": {
+        "role": "secondary",
+        "displayName": "Console Cyan",
+        "canonical": "#5ad2e6",
+        "tonalRamp": [
+          "#19393f",
+          "#31737d",
+          "#4aacbc",
+          "#6ad6e8",
+          "#89dfed",
+          "#a8e7f2",
+          "#c7f0f7",
+          "#daf5f9"
+        ]
+      },
+      "cyan-dim": {
+        "role": "secondary",
+        "displayName": "Cyan Dim",
+        "canonical": "#2f7f93",
+        "tonalRamp": [
+          "#0d2328",
+          "#1a4550",
+          "#266878",
+          "#438b9d",
+          "#6aa3b2",
+          "#91bbc6",
+          "#b9d4da",
+          "#d0e2e7"
+        ]
+      },
+      "gold": {
+        "role": "primary",
+        "displayName": "Rune Gold",
+        "canonical": "#e6b84a",
+        "tonalRamp": [
+          "#3f3214",
+          "#7d6428",
+          "#bc973d",
+          "#e8bf5b",
+          "#edcc7d",
+          "#f2da9f",
+          "#f7e7c2",
+          "#f9efd6"
+        ]
+      },
+      "gold-hover": {
+        "role": "primary",
+        "displayName": "Lit Gold",
+        "canonical": "#f2c963",
+        "tonalRamp": [
+          "#42371b",
+          "#846e36",
+          "#c6a451",
+          "#f3ce72",
+          "#f6d88f",
+          "#f8e2ad",
+          "#fbedca",
+          "#fcf3dc"
+        ]
+      },
+      "gold-ink": {
+        "role": "primary",
+        "displayName": "Gold Ink",
+        "canonical": "#1a1405",
+        "tonalRamp": [
+          "#070501",
+          "#0e0b03",
+          "#151004",
+          "#302a1d",
+          "#5b574c",
+          "#86837b",
+          "#b1afaa",
+          "#cbcac7"
+        ]
+      },
+      "ember": {
+        "role": "tertiary",
+        "displayName": "Ember",
+        "canonical": "#ff8f7a",
+        "tonalRamp": [
+          "#462721",
+          "#8b4e43",
+          "#d17564",
+          "#ff9a87",
+          "#ffafa0",
+          "#ffc4b9",
+          "#ffd9d2",
+          "#ffe6e1"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Console White",
+        "canonical": "#e6f1f7",
+        "tonalRamp": [
+          "#3f4243",
+          "#7d8387",
+          "#bcc5ca",
+          "#e8f2f8",
+          "#edf5f9",
+          "#f2f8fb",
+          "#f7fafc",
+          "#f9fcfd"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Cyan-Grey",
+        "canonical": "#8fb4c6",
+        "tonalRamp": [
+          "#273136",
+          "#4e626c",
+          "#7593a2",
+          "#9abbcb",
+          "#afc9d6",
+          "#c4d7e1",
+          "#d9e6ec",
+          "#e6eef2"
+        ]
+      },
+      "placeholder": {
+        "role": "neutral",
+        "displayName": "Placeholder",
+        "canonical": "#7da0b2",
+        "tonalRamp": [
+          "#222c31",
+          "#445761",
+          "#668392",
+          "#89a9b9",
+          "#a2bbc8",
+          "#bacdd6",
+          "#d3dfe5",
+          "#e2eaee"
+        ]
+      },
+      "slate": {
+        "role": "neutral",
+        "displayName": "Dead Slate",
+        "canonical": "#4a5b6b",
+        "tonalRamp": [
+          "#14191d",
+          "#28323a",
+          "#3d4a58",
+          "#5b6a79",
+          "#7d8995",
+          "#9fa8b1",
+          "#c2c7cd",
+          "#d6dade"
+        ]
+      },
+      "scrollbar": {
+        "role": "neutral",
+        "displayName": "Scrollbar",
+        "canonical": "#2b4a66",
+        "tonalRamp": [
+          "#0c141c",
+          "#172838",
+          "#233d53",
+          "#3f5b74",
+          "#677d91",
+          "#8f9fae",
+          "#b7c2cb",
+          "#cfd6dc"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page h1, gold Cinzel."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Hero names and panel titles (h2)."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All running text, max 70ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons and form labels."
+      },
+      "footnote": {
+        "displayName": "Footnote",
+        "purpose": "Footer."
+      }
+    },
+    "shadows": [
+      {
+        "name": "panel-drop",
+        "value": "drop-shadow(0 10px 14px rgba(0,0,0,0.45))",
+        "purpose": "Filter shadow that follows the cut corners of every panel."
+      },
+      {
+        "name": "page-wash",
+        "value": "radial-gradient(ellipse 900px 380px at 50% -6%, rgba(230,184,74,0.13), transparent 70%)",
+        "purpose": "Ambient gold light at the top of the body background; not an elevation cue."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The only easing: 0.2s buttons, 0.4s panels, 0.6s health width."
+      },
+      {
+        "name": "cells-in",
+        "value": "0.9s cubic-bezier(0.16, 1, 0.3, 1) both; clip-path inset(0 100% 0 0) to inset(0)",
+        "purpose": "Health cells light left to right when a card appears. All motion disabled under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [],
+    "shapes": [
+      {
+        "name": "cut",
+        "value": "16px",
+        "purpose": "Diagonal corner cut on panels (top-left, bottom-right)."
+      },
+      {
+        "name": "lean",
+        "value": "10px",
+        "purpose": "Parallelogram lean of buttons."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "Cyan parallelogram outline on a slate fill; the quiet default action.",
+      "html": "<button class=\"ds-btn\">Blesser</button>",
+      "css": ".ds-btn{position:relative;isolation:isolate;border:0;background:none;padding:.45rem .95rem;font:700 1.15rem Rajdhani,system-ui,sans-serif;letter-spacing:.02em;color:var(--cyan);cursor:pointer}.ds-btn::before,.ds-btn::after{content:'';position:absolute;z-index:-1;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%)}.ds-btn::before{inset:0;background:var(--cyan)}.ds-btn::after{inset:1px;background:var(--panel);clip-path:polygon(9px 0,100% 0,calc(100% - 9px) 100%,0 100%)}.ds-btn:hover::after{background:var(--panel-raised)}.ds-btn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Solid rune-gold parallelogram; the single primary action (Soigner, submit). When disabled it retreats to the muted, slate-edged look.",
+      "html": "<button class=\"ds-btn-primary\">Soigner</button>",
+      "css": ".ds-btn-primary{position:relative;isolation:isolate;border:0;background:none;padding:.45rem .95rem;font:700 1.15rem Rajdhani,system-ui,sans-serif;letter-spacing:.02em;color:var(--gold-ink);cursor:pointer}.ds-btn-primary::before,.ds-btn-primary::after{content:'';position:absolute;z-index:-1;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%)}.ds-btn-primary::before{inset:0;background:var(--gold)}.ds-btn-primary::after{inset:1px;background:var(--gold);clip-path:polygon(9px 0,100% 0,calc(100% - 9px) 100%,0 100%)}.ds-btn-primary:hover::after{background:var(--gold-hover)}.ds-btn-primary:focus-visible{outline:2px solid var(--gold);outline-offset:4px} .ds-btn-primary[disabled]{color:var(--muted);cursor:not-allowed;text-decoration:line-through;text-decoration-thickness:2px}.ds-btn-primary[disabled]::before{background:var(--slate)}.ds-btn-primary[disabled]::after{background:var(--panel)}"
+    },
+    {
+      "name": "Disabled Button",
+      "kind": "button",
+      "refersTo": "button-disabled",
+      "description": "Struck-through label with a slate outline and panel face; never merely greyed. Also the state of a disabled primary.",
+      "html": "<button class=\"ds-btn-disabled\" disabled>Blesser</button>",
+      "css": ".ds-btn-disabled{position:relative;isolation:isolate;border:0;background:none;padding:.45rem .95rem;font:700 1.15rem Rajdhani,system-ui,sans-serif;letter-spacing:.02em;color:var(--muted);text-decoration:line-through;text-decoration-thickness:2px;cursor:not-allowed}.ds-btn-disabled::before,.ds-btn-disabled::after{content:'';position:absolute;z-index:-1;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%)}.ds-btn-disabled::before{inset:0;background:var(--slate)}.ds-btn-disabled::after{inset:1px;background:var(--panel);clip-path:polygon(9px 0,100% 0,calc(100% - 9px) 100%,0 100%)}.ds-btn-disabled:hover::after{background:var(--panel-raised)}.ds-btn-disabled:focus-visible{outline:2px solid var(--gold);outline-offset:4px}"
+    },
+    {
+      "name": "Hero Panel",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Opaque slate panel with two cut corners, cyan-dim hairline and soft drop shadow.",
+      "html": "<div class=\"ds-card\"><h2>Aldric</h2><p>Paladin</p><div class=\"ds-bar\"><div class=\"ds-bar-fill\"></div></div></div>",
+      "css": ".ds-card{position:relative;isolation:isolate;padding:1.25rem 1.5rem 1.35rem;color:var(--text);font-family:Rajdhani,system-ui,sans-serif;filter:drop-shadow(0 10px 14px rgba(0,0,0,.45))}.ds-card::before,.ds-card::after{content:'';position:absolute;z-index:-1}.ds-card::before{inset:0;background:var(--cyan-dim);clip-path:polygon(0 16px,16px 0,100% 0,100% calc(100% - 16px),calc(100% - 16px) 100%,0 100%)}.ds-card::after{inset:1px;background:var(--panel);clip-path:polygon(0 15.41px,15.41px 0,100% 0,100% calc(100% - 15.41px),calc(100% - 15.41px) 100%,0 100%)}.ds-card h2{font:700 1.55rem/1.2 Cinzel,Georgia,serif;letter-spacing:.03em;color:var(--gold);margin:0}.ds-card p{margin:0 0 .75rem;color:var(--muted)}.ds-bar{height:18px;background:rgba(90,210,230,.16);transform:skewX(-20deg);-webkit-mask-image:repeating-linear-gradient(90deg,#000 0 calc(10% - 4px),transparent calc(10% - 4px) 10%);mask-image:repeating-linear-gradient(90deg,#000 0 calc(10% - 4px),transparent calc(10% - 4px) 10%)}.ds-bar-fill{height:100%;width:70%;background:var(--cyan)}.ds-bar-alert .ds-bar-fill{background:var(--ember)} .ds-bar-fill{animation:ds-cells-in .9s cubic-bezier(.16,1,.3,1) both}@keyframes ds-cells-in{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0)}}@media (prefers-reduced-motion:reduce){.ds-bar-fill{animation:none}}"
+    },
+    {
+      "name": "Hero Panel (alert)",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Critical health: fill turns ember, accompanied by a text warning.",
+      "html": "<div class=\"ds-card ds-bar-alert\"><h2>Brunhild</h2><p style=\"color:var(--ember);font-weight:700\">Santé critique</p><div class=\"ds-bar\"><div class=\"ds-bar-fill\" style=\"width:20%\"></div></div></div>",
+      "css": ".ds-card{position:relative;isolation:isolate;padding:1.25rem 1.5rem 1.35rem;color:var(--text);font-family:Rajdhani,system-ui,sans-serif;filter:drop-shadow(0 10px 14px rgba(0,0,0,.45))}.ds-card::before,.ds-card::after{content:'';position:absolute;z-index:-1}.ds-card::before{inset:0;background:var(--cyan-dim);clip-path:polygon(0 16px,16px 0,100% 0,100% calc(100% - 16px),calc(100% - 16px) 100%,0 100%)}.ds-card::after{inset:1px;background:var(--panel);clip-path:polygon(0 15.41px,15.41px 0,100% 0,100% calc(100% - 15.41px),calc(100% - 15.41px) 100%,0 100%)}.ds-card h2{font:700 1.55rem/1.2 Cinzel,Georgia,serif;letter-spacing:.03em;color:var(--gold);margin:0}.ds-card p{margin:0 0 .75rem;color:var(--muted)}.ds-bar{height:18px;background:rgba(90,210,230,.16);transform:skewX(-20deg);-webkit-mask-image:repeating-linear-gradient(90deg,#000 0 calc(10% - 4px),transparent calc(10% - 4px) 10%);mask-image:repeating-linear-gradient(90deg,#000 0 calc(10% - 4px),transparent calc(10% - 4px) 10%)}.ds-bar-fill{height:100%;width:70%;background:var(--cyan)}.ds-bar-alert .ds-bar-fill{background:var(--ember)} .ds-bar-fill{animation:ds-cells-in .9s cubic-bezier(.16,1,.3,1) both}@keyframes ds-cells-in{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0)}}@media (prefers-reduced-motion:reduce){.ds-bar-fill{animation:none}}"
+    },
+    {
+      "name": "Hero Panel (K.O.)",
+      "kind": "card",
+      "refersTo": "card-ko",
+      "description": "No lit cell, dead-slate hairline, muted title.",
+      "html": "<div class=\"ds-card\"><h2 style=\"color:var(--muted)\">Corwin</h2><p>K.O.</p><div class=\"ds-bar\"><div class=\"ds-bar-fill\" style=\"width:0\"></div></div></div>",
+      "css": ".ds-card{position:relative;isolation:isolate;padding:1.25rem 1.5rem 1.35rem;color:var(--text);font-family:Rajdhani,system-ui,sans-serif;filter:drop-shadow(0 10px 14px rgba(0,0,0,.45))}.ds-card::before,.ds-card::after{content:'';position:absolute;z-index:-1}.ds-card::before{inset:0;background:var(--slate);clip-path:polygon(0 16px,16px 0,100% 0,100% calc(100% - 16px),calc(100% - 16px) 100%,0 100%)}.ds-card::after{inset:1px;background:var(--panel);clip-path:polygon(0 15.41px,15.41px 0,100% 0,100% calc(100% - 15.41px),calc(100% - 15.41px) 100%,0 100%)}.ds-card h2{font:700 1.55rem/1.2 Cinzel,Georgia,serif;letter-spacing:.03em;color:var(--gold);margin:0}.ds-card p{margin:0 0 .75rem;color:var(--muted)}.ds-bar{height:18px;background:rgba(90,210,230,.16);transform:skewX(-20deg);-webkit-mask-image:repeating-linear-gradient(90deg,#000 0 calc(10% - 4px),transparent calc(10% - 4px) 10%);mask-image:repeating-linear-gradient(90deg,#000 0 calc(10% - 4px),transparent calc(10% - 4px) 10%)}.ds-bar-fill{height:100%;width:70%;background:var(--cyan)}.ds-bar-alert .ds-bar-fill{background:var(--ember)} .ds-bar-fill{animation:ds-cells-in .9s cubic-bezier(.16,1,.3,1) both}@keyframes ds-cells-in{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0)}}@media (prefers-reduced-motion:reduce){.ds-bar-fill{animation:none}}"
+    },
+    {
+      "name": "Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Square dark field with a 2px cyan underline that turns gold on focus.",
+      "html": "<input class=\"ds-input\" placeholder=\"Nom du héros\">",
+      "css": ".ds-input{font:500 1.15rem Rajdhani,system-ui,sans-serif;color:var(--text);background:var(--field);border:0;border-bottom:2px solid var(--cyan);border-radius:0;padding:.45rem .7rem}.ds-input::placeholder{color:#7da0b2}.ds-input:focus{border-bottom-color:var(--gold);outline:2px solid var(--gold);outline-offset:4px}"
+    },
+    {
+      "name": "Title Ornament",
+      "kind": "custom",
+      "refersTo": "h1::after",
+      "description": "Gold hairline with a centred diamond under the page title; decoration bound to the h1.",
+      "html": "<h1 class=\"ds-title\">La Taverne</h1>",
+      "css": ".ds-title{font:700 2.4rem/1.1 Cinzel,Georgia,serif;letter-spacing:.04em;color:var(--gold);margin:0}.ds-title::after{content:'';display:block;width:min(100%,26rem);height:12px;margin-top:.7rem;background:var(--gold);clip-path:polygon(0 40%,calc(50% - 12px) 40%,50% 0,calc(50% + 12px) 40%,100% 40%,100% 60%,calc(50% + 12px) 60%,50% 100%,calc(50% - 12px) 60%,0 60%)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "La console arcanique",
+    "overview": "The Taverne de React-vania is rendered as a sci-fantasy codex console: every hero is an arcane readout on an opaque slate panel, health is counted in slanted cyan cells, and runes are gold. Neo-futuristic with the fantasy cliches kept, depth comes from cut geometry and one dark drop shadow; the only warm light is a faint gold wash at the top of the page. Quiet infrastructure for a lesson: state must be legible at a glance, and every interactive element is a standard button or field.",
+    "keyCharacteristics": [
+      "Ink-blue ground with a faint cyan dot grid (34px) and a soft gold wash at the top, opaque slate panels on top.",
+      "A gold hairline-and-diamond ornament under the page title.",
+      "Two diagonal cut corners (16px) on every panel; parallelogram buttons; slanted health cells.",
+      "Cyan structural; gold only for headings and the single primary action; ember only for alerts.",
+      "Cinzel for titles only; Rajdhani for everything else, tabular figures.",
+      "State is never carried by color alone."
+    ],
+    "rules": [
+      {
+        "name": "The Gold Is Scarce Rule",
+        "body": "Gold appears on headings, the title ornament that belongs to the h1, the top-of-page wash, and the one primary action per context (Soigner in a card, any submit button). Hover or focus within a card may borrow gold for its hairline. Gold decoration is limited to that one title-bound ornament and the ambient wash; never use gold for other decoration or secondary buttons. A disabled primary leaves gold entirely.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ember Means Alert Rule",
+        "body": "Ember is used only with an accompanying text alert. It is never a brand accent.",
+        "section": "colors"
+      },
+      {
+        "name": "The Titles Only Rule",
+        "body": "Cinzel is for h1 and h2. Everything the learner reads or clicks is Rajdhani.",
+        "section": "typography"
+      },
+      {
+        "name": "The Shadow Follows The Cut Rule",
+        "body": "Panel shadow is a filter: drop-shadow, never box-shadow, so cut corners stay honest. Interaction changes the hairline color and neighbours' opacity, not elevation.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep gold for headings and one primary action per context.",
+      "Do pair every ember or disabled state with a text or strikethrough cue.",
+      "Do build new panels from the cut-corner polygon (16px) and new buttons from the parallelogram recipe.",
+      "Do show state through the cell count, K.O. hairline, and heading dimming.",
+      "Do use drop-shadow filter for panel shadow and respect prefers-reduced-motion (transitions and animation off).",
+      "Do retreat a disabled primary to the muted, slate-edged look; a disabled control must never read as active."
+    ],
+    "donts": [
+      "Don't use rounded corners, glowing elements, or neon blur; the world is hard-cut, opaque, and dark.",
+      "Don't use the violet-and-gold parchment fantasy card or a neon dashboard look.",
+      "Don't use gold or ember as decoration beyond the title ornament and page wash, or for secondary actions.",
+      "Don't use Cinzel for body, labels or buttons.",
+      "Don't let color alone carry state."
+    ]
+  }
+}

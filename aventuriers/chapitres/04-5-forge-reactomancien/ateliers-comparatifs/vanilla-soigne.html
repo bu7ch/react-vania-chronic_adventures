@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Atelier : JavaScript « à la main », version soignée</title>
+</head>
+<body>
+  <h1>Version soignée : on ne modifie que ce qui change</h1>
+  <p>Tape une note pour Aragorn, puis clique sur « Soigner ». Ta note survit.</p>
+  <ul id="app"></ul>
+
+  <script>
+    const heroes = [
+      { id: 1, name: "Aragorn", health: 25 },
+      { id: 2, name: "Gandalf", health: 90 },
+    ];
+
+    const app = document.getElementById("app");
+
+    // On crée chaque ligne UNE SEULE FOIS...
+    heroes.forEach((hero) => {
+      const li = document.createElement("li");
+      li.innerHTML = `
+        ${hero.name} : <span>${hero.health}</span> PV
+        <input aria-label="note-${hero.name}" placeholder="Une note..." />
+        <button>Soigner</button>`;
+
+      // ...et on la met à jour À LA MAIN : on retrouve le bon morceau et on le modifie.
+      li.querySelector("button").addEventListener("click", () => {
+        hero.health += 20;
+        li.querySelector("span").textContent = hero.health;
+      });
+
+      app.append(li);
+    });
+
+    // Et pour ajouter ou retirer un héros ? Il faudrait écrire d'autres morceaux de code
+    // qui créent, insèrent et suppriment des éléments en gardant tout cohérent.
+    // C'est exactement le travail que React fait pour toi.
+  </script>
+</body>
+</html>

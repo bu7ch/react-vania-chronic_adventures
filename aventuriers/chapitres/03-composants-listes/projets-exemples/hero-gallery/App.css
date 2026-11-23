@@ -1,0 +1,30 @@
+/* 🎨 Style de la galerie (à ajouter À CÔTÉ de src/index.css du Chapitre 2).
+   Rien à comprendre ici : une grille qui range les cartes, et un seul héros éclairé à la fois. */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  gap: 1.25rem;
+}
+
+.gallery .card {
+  margin: 0;
+}
+
+.hero-card h2 {
+  margin: 0;
+}
+
+.hero-card .subtitle {
+  margin: 0 0 0.75rem;
+}
+
+/* Au survol ou au clavier, la carte active s'éclaire (filet or) et les autres reculent */
+.hero-card:hover,
+.hero-card:focus-within {
+  --edge: var(--gold);
+}
+
+.gallery:has(.hero-card:hover, .hero-card:focus-within) .hero-card:not(:hover):not(:focus-within) {
+  opacity: 0.7;
+}
