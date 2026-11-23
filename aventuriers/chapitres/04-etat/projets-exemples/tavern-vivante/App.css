@@ -13,7 +13,8 @@
 }
 
 /* Le bouton « Réinitialiser » respire sous la galerie */
-.gallery + button {
+.gallery + button,
+.subtitle + button {
   margin-top: 1.75rem;
 }
 

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Atelier : JavaScript « à la main », version naïve</title>
+</head>
+<body>
+  <h1>Version naïve : on reconstruit tout à chaque changement</h1>
+  <p>Tape une note pour Aragorn, puis clique sur « Soigner ». Que devient ta note ?</p>
+  <ul id="app"></ul>
+
+  <script>
+    const heroes = [
+      { id: 1, name: "Aragorn", health: 25 },
+      { id: 2, name: "Gandalf", health: 90 },
+    ];
+
+    const app = document.getElementById("app");
+
+    // On reconstruit TOUTE la liste en texte HTML à chaque changement.
+    function render() {
+      app.innerHTML = heroes
+        .map(
+          (hero) => `
+            <li>
+              ${hero.name} : <span>${hero.health}</span> PV
+              <input aria-label="note-${hero.name}" placeholder="Une note..." />
+              <button data-id="${hero.id}">Soigner</button>
+            </li>`
+        )
+        .join("");
+    }
+
+    app.addEventListener("click", (event) => {
+      const id = event.target.dataset.id;
+      if (!id) return;
+      const hero = heroes.find((h) => h.id === Number(id));
+      hero.health += 20;
+      render(); // ← on détruit les anciens éléments et on en crée de nouveaux
+    });
+
+    render();
+  </script>
+</body>
+</html>

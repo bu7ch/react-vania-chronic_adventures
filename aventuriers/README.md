@@ -9,7 +9,7 @@ Bienvenue dans React-vania Chronicle Adventures ! Ce n'est pas un manuel techniq
 
 **Langue :** Français | **Dernière mise à jour :** Novembre 2026
 
-> 🚧 **État du cours :** les chapitres 1 à 4 sont disponibles. Le chapitre 4.5 est en cours d'écriture ; le reste est à venir (voir la [feuille de route](./ROADMAP.md)).
+> 🚧 **État du cours :** les chapitres 1 à 4.5 sont disponibles ; le reste est à venir (voir la [feuille de route](./ROADMAP.md)).
 
 ---
 
@@ -20,7 +20,7 @@ Bienvenue dans React-vania Chronicle Adventures ! Ce n'est pas un manuel techniq
 | **Accessibilité** | Gratuit + €20 | $300 | €159 | Gratuit |
 | **Pédagogie** | Analyze/Evaluate/Create | Expert | Débutant | Basique |
 | **Métaphore immersive** | ✅ RPG | ❌ Non | ❌ Non | ❌ Non |
-| **Chapitre technique** | ✅ Ch 4.5 (à venir) | Oui | Non | Non |
+| **Chapitre technique** | ✅ Ch 4.5 | Oui | Non | Non |
 | **Dépôt public** | ✅ Solutions commentées | Non | Paywall | Oui |
 | **Temps d'apprentissage** | 30-40h | 50h+ | 20h | 50h+ |
 
@@ -39,7 +39,7 @@ PARTIE 1 : FONDATIONS (Chapitres 1-3)
 └── Ch 3 : Les Composants + Listes
     └─ Props, listes, .map(), clés
 
-PARTIE 2 : LOGIQUE (Chapitres 4-4.5, en cours d'écriture)
+PARTIE 2 : LOGIQUE (Chapitres 4-4.5)
 ├── Ch 4 : L'État = Ta Barre de Santé
 │   └─ useState, états multiples
 └── Ch 4.5 : La forge du réactomancien
@@ -71,7 +71,7 @@ cat ./chapitres/01-royaume-javascript/README.md
 
 ### **2. Faire les quêtes (exercices)**
 
-Chaque chapitre a **4 phases** :
+Chaque chapitre (sauf le 4.5, fait de mini-exos et d'ateliers) a **4 phases** :
 
 ```
 🗡️  Phase 1 : CREATE        (code le projet)
@@ -144,14 +144,11 @@ aventuriers/
 │   │   │   └── tavern-vivante/     ← App, HeroGallery, HeroCard, AddHeroForm, App.css
 │   │   └── test-rapide.md
 │   │
-│   └── 04-5-forge-reactomancien/   (à venir)
-│       ├── README.md
-│       ├── concepts/
-│       │   ├── dom-virtuel.md
-│       │   ├── batching.md
-│       │   ├── cles.md
-│       │   └── hooks-rules.md
-│       ├── mini-exos/
+│   └── 04-5-forge-reactomancien/
+│       ├── README.md               ← Le cours (réponses aux exos incluses)
+│       ├── demos/
+│       │   └── mini-react.js       ← Forge ton useState (node)
+│       ├── mini-exos/              ← 6 exos à prédire puis lancer
 │       │   ├── exo1-observer-rerender.jsx
 │       │   ├── exo2-piege-batching.jsx
 │       │   ├── exo3-batching-timeout.jsx
@@ -159,7 +156,7 @@ aventuriers/
 │       │   ├── exo5-cles-stables.jsx
 │       │   └── exo6-hook-order.jsx
 │       ├── ateliers-comparatifs/
-│       │   ├── react-vs-vanilla.md
+│       │   ├── react-vs-vanilla.md (+ 2 pages HTML)
 │       │   └── usestate-vs-usereducer.md
 │       └── test-rapide.md
 │
@@ -250,8 +247,7 @@ main/                           ← Code principal (ce que tu lis)
 ├── solutions-ch1-phase2        ← Solutions du Ch 1 (phases 2 et 4)
 ├── solutions-ch2-phase2        ← à venir
 ├── solutions-ch3-phase2        ← à venir
-├── solutions-ch4-phase2        ← à venir
-└── solutions-ch45-mini-exos    ← à venir (les 6 mini-exos du Ch 4.5)
+└── solutions-ch4-phase2        ← à venir
 ```
 
 La convention : **une branche de solutions par chapitre**, nommée `solutions-chN-phase2`. Elle regroupe les solutions de toutes les phases du chapitre qui en ont une (les Phases 2 et 4). La Phase 3 (Evaluate) n'a pas de « bonne » réponse unique.
@@ -302,7 +298,7 @@ code .
 Semaine 1 : Chapitre 1 (JavaScript) + Mini-exos
 Semaine 2 : Chapitre 2 (React setup)
 Semaine 3 : Chapitre 3 (Composants)
-Semaine 4 : Chapitre 4 (État) + Chapitre 4.5 (Forge, à venir)
+Semaine 4 : Chapitre 4 (État) + Chapitre 4.5 (Forge)
 Semaine 5 : Projets pratiques                               (à venir)
 Semaine 6-7 : Projet final : construire un jeu              (à venir)
 ```
@@ -418,8 +414,7 @@ Ton nom sera dans les crédits ! 🙌
 ## 📊 Progression du projet
 
 ```
-✅ Chapitres 1, 2, 3, 4 : écrits (README, quête, test rapide, exemples)
-🔄 Chapitre 4.5 (forge) : en cours d'écriture
+✅ Chapitres 1, 2, 3, 4, 4.5 : écrits (README, quête ou mini-exos, test rapide, exemples)
 🔜 Chapitres 5-6 (patterns, useEffect) : à venir
 🔜 Projets complets, bonus, ressources : à venir
 ```

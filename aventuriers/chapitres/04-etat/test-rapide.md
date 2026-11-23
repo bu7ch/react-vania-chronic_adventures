@@ -143,7 +143,7 @@ A appelle `setCount` pendant le rendu : le composant se redessine en boucle (err
 `count` est un **instantané** : il vaut `0` pendant tout ce rendu. Les trois lignes demandent donc « 1 » trois fois. Pour obtenir 3 : `setCount((current) => current + 1)` trois fois.
 
 ### Q4 : A
-B et C **modifient** le tableau d'état en place puis redonnent la même référence : React ne voit aucun changement et ne redessine rien. `filter` renvoie un **nouveau** tableau sans le héros visé.
+B et C **modifient** le tableau d'état en place puis redonnent le même tableau : React ne voit aucun changement et ne redessine rien. `filter` renvoie un **nouveau** tableau sans le héros visé.
 
 ### Q5 : B
 `useState(health)` n'utilise `health` que comme valeur de **départ**, au premier rendu. Ensuite, `h` garde sa valeur : la carte affiche `10 PV`. Pour suivre la prop, utilise-la directement (`{health}`).

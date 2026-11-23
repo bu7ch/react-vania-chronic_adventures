@@ -2,7 +2,7 @@
 
 À la fin du Chapitre 3, tu as ajouté un bouton « Terminer » qui s'affichait, réagissait au clic... et ne changeait rien à l'écran. Ta taverne est jolie, mais **figée** : elle montre des données, elle ne sait pas les faire évoluer. Dans ce chapitre, tu lui donnes une **mémoire**. C'est le chapitre qui transforme une page en application.
 
-**Durée :** 2 h de lecture et de pratique, puis la quête (4-5 h).
+**Durée :** 2 h de lecture et de pratique, puis la quête (5-6 h).
 **Prérequis :** le [Chapitre 3](../03-composants-listes/README.md) (props, `.map()`, `key`) et ton projet Vite.
 
 ---
@@ -38,7 +38,7 @@ Il nous faut donc un endroit où ranger une donnée qui :
 - **survit** d'un affichage à l'autre ;
 - **prévient React** quand elle change, pour qu'il redessine la page.
 
-Cet endroit s'appelle l'**état** (*state*), et on y accède avec le hook `useState`.
+Cet endroit s'appelle l'**état** (*state*), et on y accède avec `useState`, une fonction spéciale de React qu'on appelle un **hook** (on y revient en section 9).
 
 ---
 
@@ -50,11 +50,11 @@ Avant l'état, un mot sur le bouton. Tu as déjà vu `onClick` dans le chapitre 
 <button onClick={hit}>Blesser</button>
 ```
 
-`onClick` est une prop spéciale : tu lui donnes **une fonction**, et React la rappelle **quand l'utilisateur clique**. Il existe un `on...` pour chaque événement : `onChange` (saisie dans un champ), `onSubmit` (envoi d'un formulaire), `onMouseEnter`...
+`onClick` est une prop spéciale : tu lui donnes **une fonction**, et React la rappelle **quand l'utilisateur clique**. La fonction que tu donnes à `onClick` s'appelle un **gestionnaire d'événement** (*event handler*) : c'est elle qui « gère » le clic. Il existe un `on...` pour chaque événement : `onChange` (saisie dans un champ), `onSubmit` (envoi d'un formulaire), `onMouseEnter`...
 
 ### La règle qui évite 90 % des bugs : une fonction, pas un appel
 
-Tu te souviens du Chapitre 1 : `castFireball` désigne le sort, `castFireball(25)` le **lance**. Ici, c'est vital :
+Tu te souviens du Chapitre 1 : `castFireball` désigne le sort, `castFireball(25)` le **lance**. Ici, c'est vital. (Extrait de démonstration : les `//` annotent chaque ligne, ce n'est pas du JSX à copier tel quel.)
 
 ```jsx
 <button onClick={hit}>          // ✅ on donne la fonction : React l'appellera au clic
@@ -110,7 +110,7 @@ Clique : l'écran passe à 15, puis 5, puis -5. Décortiquons.
 
 ### Le destructuring de tableau
 
-`useState(25)` renvoie **un tableau de deux éléments** : la valeur actuelle et une fonction pour la changer. On les déplie avec le **destructuring de tableau**, cousin de celui du Chapitre 1 (mais avec des crochets, car on déplie un tableau et non un objet) :
+`useState(25)` renvoie **un tableau de deux éléments** : la valeur actuelle et une fonction pour la changer (on l'appelle le **setter**). On les déplie avec le **destructuring de tableau**, cousin de celui du Chapitre 1 (mais avec des crochets, car on déplie un tableau et non un objet) :
 
 ```javascript
 const pair = ["Aragorn", 100];
@@ -172,7 +172,7 @@ function hitTwice() {
 }
 ```
 
-Règle pratique : **si ton nouvel état se calcule à partir de l'ancien, utilise la forme fonction** (`(current) => ...`). Tu comprendras en détail pourquoi au Chapitre 4.5 (« La forge du réactomancien »).
+Règle pratique : **dès que ton nouvel état se calcule à partir de l'ancien et que tu peux faire plusieurs appels, ou attendre avant d'appeler (un minuteur), utilise la forme fonction** (`(current) => ...`). Une valeur directe reste sûre quand elle ne dépend pas de l'ancienne (`setOpen(true)`, `setName("")`), ou quand c'est le seul appel de ton gestionnaire et qu'il s'exécute tout de suite (`setHeroes(heroes.filter(...))` dans un clic). Tu comprendras en détail pourquoi au Chapitre 4.5 (« La forge du réactomancien »).
 
 ---
 
@@ -204,6 +204,8 @@ function AddHeroForm({ onAdd }) {
 
 Le cycle : tu tapes une lettre → `onChange` se déclenche → `setName` met à jour l'état → le composant se redessine → l'`input` affiche la nouvelle valeur. **L'état est la source de vérité**, le champ n'est qu'un reflet.
 
+(`name.trim()` enlève les espaces au début et à la fin d'un texte : `" Frodon "` devient `"Frodon"`. Dans la démo, `<label htmlFor="hero-name">` est relié au champ d'`id="hero-name"` : cliquer sur l'étiquette place le curseur dans le champ.)
+
 Si tu donnes une `value` à un champ **sans** `onChange`, il devient figé (impossible de taper) et la console te prévient : « You provided a `value` prop to a form field without an `onChange` handler ».
 
 Autre détail : `event.preventDefault()`. Sans lui, envoyer un formulaire recharge la page entière, et ton état disparaît.
@@ -229,9 +231,9 @@ function hit() {
 }
 ```
 
-Résultat : **rien ne change à l'écran**, alors que la donnée, elle, a bien été modifiée en coulisse (au clic suivant, la page « saute » de deux valeurs d'un coup !). Pourquoi ? React compare l'ancienne et la nouvelle valeur pour décider s'il doit redessiner. Si tu lui redonnes **le même objet**, il conclut « rien n'a changé ».
+Résultat : **rien ne change à l'écran**, alors que la donnée, elle, a bien été modifiée en coulisse (l'écran reste figé tant que rien d'autre ne redessine le composant ; dès qu'un autre changement provoque un rendu, la page « rattrape » d'un coup toutes les modifications cachées). Pourquoi ? React compare l'ancienne et la nouvelle valeur pour décider s'il doit redessiner. Si tu lui redonnes **le même objet**, il conclut « rien n'a changé ».
 
-La bonne façon : fabriquer une **copie** avec le spread (`...`), tu l'as vu au Chapitre 3.
+La bonne façon : fabriquer une **copie** avec le spread (`...`), que tu as rencontré au Chapitre 3 pour copier un tableau (`[...heroes]`) et passer des props (`{...hero}`).
 
 ### Objets : copier puis surcharger
 
@@ -366,7 +368,7 @@ Règle de placement : **mets l'état dans le plus petit composant qui est parent
 
 ## 9. Les règles des hooks (aperçu)
 
-`useState` est un **hook** : une fonction spéciale de React dont le nom commence par `use`. Deux règles à respecter, que le linter vérifie pour toi :
+`useState` est un **hook** : une fonction spéciale de React dont le nom commence par `use`. Deux règles à respecter, que le **linter** vérifie pour toi (le linter est un outil qui relit ton code et signale les erreurs probables : dans ton projet Vite, lance `npm run lint` dans le terminal) :
 
 1. **Appelle les hooks uniquement dans un composant** (ou un autre hook), pas dans une fonction ordinaire.
 2. **Appelle-les toujours au niveau le plus haut du composant** : jamais dans un `if`, une boucle ou après un `return`.
@@ -396,10 +398,10 @@ La démo [`projets-exemples/tavern-vivante/`](./projets-exemples/tavern-vivante/
 | [`AddHeroForm.jsx`](./projets-exemples/tavern-vivante/AddHeroForm.jsx) | Formulaire avec **son propre état local** (le texte saisi) |
 | [`App.css`](./projets-exemples/tavern-vivante/App.css) | Style de la grille, de la rangée d'actions et du formulaire (les boutons et les champs eux-mêmes sont déjà dans `index.css`) |
 
-Pour l'essayer, garde le `src/index.css` du Chapitre 2 et copie les cinq fichiers dans `src/`. Puis expérimente :
+Pour l'essayer, garde le `src/index.css` du Chapitre 2 et copie les cinq fichiers dans `src/` (cet `App.css` remplace celui du Chapitre 3). Puis expérimente :
 
 - Blesse un héros jusqu'à 0 : que se passe-t-il à l'écran ? (La santé ne descend jamais sous 0, le bouton se désactive.)
-- Remplace dans `changeHealth` le `.map(...)` par une modification directe (`hero.health += delta`) : que constates-tu ?
+- Remplace tout le corps de `changeHealth` par `const hero = heroes.find((h) => h.id === id); hero.health += delta; setHeroes(heroes);` (une modification en place) : clique sur « Blesser » plusieurs fois, que constates-tu ? Puis ajoute un héros avec le formulaire : que se passe-t-il ? (Réponse : l'écran ne bouge pas, puis, à l'ajout, il « rattrape » d'un coup les coups cachés, santé négative comprise puisque cette version n'a plus les garde-fous `Math.min` et `Math.max`.)
 - Retire le `event.preventDefault()` : que se passe-t-il quand tu ajoutes un héros ?
 
 ---
@@ -437,11 +439,11 @@ Une confusion à lever : **props et état sont deux choses différentes.** Les p
 
 1. **Lis ce chapitre** en testant chaque exemple dans ton projet (1 h 15).
 2. **Fais tourner la démo** [`tavern-vivante`](./projets-exemples/tavern-vivante/) et fais les trois expériences de la section 10 (30 min).
-3. **Fais la Quête 4** dans [`quete-4.md`](./quete-4.md) (4-5 h, 4 phases).
+3. **Fais la Quête 4** dans [`quete-4.md`](./quete-4.md) (5-6 h, 4 phases).
 4. **Passe le [test rapide](./test-rapide.md)** (20 min).
 
 ## Prochaines étapes
 
 Tu sais maintenant faire vivre une interface. Mais plusieurs choses ont été annoncées sans être expliquées : pourquoi React redessine « seulement ce qui a changé » ? Pourquoi deux `setX(x + 1)` d'affilée n'ajoutent qu'un ? À quoi sert réellement la `key` ? Au **Chapitre 4.5**, on soulève le capot : DOM virtuel, regroupement des mises à jour, clés et règles des hooks.
 
-👉 Chapitre 4.5 : La forge du réactomancien *(à venir)*
+👉 [Chapitre 4.5 : La forge du réactomancien](../04-5-forge-reactomancien/README.md)

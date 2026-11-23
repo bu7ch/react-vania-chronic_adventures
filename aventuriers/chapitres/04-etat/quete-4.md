@@ -4,7 +4,7 @@
 
 Rendre ta galerie du Chapitre 3 **vivante** : des héros qu'on blesse, qu'on soigne, qu'on ajoute et qu'on renvoie. Puis analyser les pièges classiques de l'état, comparer plusieurs façons de le ranger, et construire seul un carnet de quêtes interactif.
 
-**Durée estimée :** 4-5 heures
+**Durée estimée :** 5-6 heures
 **Difficulté :** Facile → Moyen → Moyen → Difficile
 **Prérequis :** avoir lu le [Chapitre 4](./README.md) et gardé le projet de la Quête 3 (avec `src/index.css` du cours).
 
@@ -398,9 +398,9 @@ const initialQuests = [
 Quand ça marche, réponds par écrit :
 
 1. **Recharge la page** (F5). Qu'arrive-t-il à tes quêtes ajoutées ? Pourquoi, d'après ce que tu sais de l'état ?
-2. Combien de composants sont traversés par ta fonction `completeQuest` entre `App` et le bouton ? Que se passerait-il avec 3 niveaux de composants de plus ?
+2. Combien de composants sont traversés par la fonction qui termine une quête, entre `App` et le bouton ? Que se passerait-il avec 3 niveaux de composants de plus ?
 3. Dans ton code, as-tu des endroits où tu appelles `setX(valeur)` alors qu'il aurait fallu `setX((current) => ...)` ? Comment le saurais-tu ?
-4. Que se passe-t-il si tu cliques **très vite** plusieurs fois sur un bouton qui modifie l'état ? As-tu confiance dans ton code ?
+4. Imagine que « Terminer » ne s'applique qu'**une seconde plus tard** (avec `setTimeout(fonction, 1000)`) et que tu cliques très vite sur plusieurs boutons. As-tu confiance dans ton code ?
 
 **Ces questions annoncent la suite du cours.** La 1 prépare la sauvegarde des données (effets de bord, `useEffect`). La 2 prépare les patterns de composants avancés. Les 3 et 4 sont l'objet du Chapitre 4.5 (regroupement des mises à jour). Garde tes réponses.
 

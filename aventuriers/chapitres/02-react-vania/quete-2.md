@@ -4,7 +4,7 @@
 
 Construire la page d'accueil d'une taverne : un en-tête, la fiche d'un aventurier avec sa barre de vie, un pied de page. Puis analyser ce qui peut mal tourner, comparer plusieurs façons d'organiser ton code, et enfin affronter seul un défi qui te fera sentir pourquoi les **props** (Chapitre 3) existent.
 
-**Durée estimée :** 3-4 heures
+**Durée estimée :** 3-4,5 heures
 **Difficulté :** Facile → Moyen → Moyen → Difficile
 **Prérequis :** avoir lu le [Chapitre 2](./README.md) et fait le « ménage » dans ton projet Vite (`src/App.jsx` minimal, `src/index.css` remplacé).
 

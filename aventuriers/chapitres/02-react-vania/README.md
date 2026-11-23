@@ -2,7 +2,7 @@
 
 Tu as traversé le royaume de JavaScript. Devant toi se dresse maintenant la porte de React-vania. Dans ce chapitre, tu l'ouvres : tu allumes la forge (Vite), tu comprends ce qu'elle a fabriqué, et tu écris **ton premier composant**.
 
-**Durée :** 1-2 h de lecture et de pratique, puis la quête (3-4 h).
+**Durée :** 1-2 h de lecture et de pratique, puis la quête (3-4,5 h).
 **Prérequis :** le Chapitre 1 (objets, fonctions, arrow functions, destructuring) et un projet Vite qui tourne ([GETTING_STARTED](../../GETTING_STARTED.md#étape-4--créer-un-projet-react-10-15-min)).
 
 ---
@@ -311,7 +311,7 @@ Une chose que React ne fait pas : il ne modifie pas ton fichier HTML. Il constru
 
 1. **Lis ce chapitre** en tapant le code toi-même, sans copier-coller (45 min).
 2. **Copie la démo** [`code-demo/App.jsx`](./code-demo/App.jsx), lance-la, et modifie les données (15 min).
-3. **Fais la Quête 2** dans [`quete-2.md`](./quete-2.md) (3-4 h, 4 phases).
+3. **Fais la Quête 2** dans [`quete-2.md`](./quete-2.md) (3-4,5 h, 4 phases).
 4. **Passe le [test rapide](./test-rapide.md)** (15 min).
 
 ## Prochaines étapes
