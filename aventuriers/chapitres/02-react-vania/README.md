@@ -2,7 +2,7 @@
 
 Tu as traversé le royaume de JavaScript. Devant toi se dresse maintenant la porte de React-vania. Dans ce chapitre, tu l'ouvres : tu allumes la forge (Vite), tu comprends ce qu'elle a fabriqué, et tu écris **ton premier composant**.
 
-**Durée :** 1-2 h de lecture et de pratique, puis la quête (2-3 h).
+**Durée :** 1-2 h de lecture et de pratique, puis la quête (3-4 h).
 **Prérequis :** le Chapitre 1 (objets, fonctions, arrow functions, destructuring) et un projet Vite qui tourne ([GETTING_STARTED](../../GETTING_STARTED.md#étape-4--créer-un-projet-react-10-15-min)).
 
 ---
@@ -59,6 +59,8 @@ La page ne contient qu'une `<div id="root">` vide et un script. Tout ce que tu v
 
 ### `src/main.jsx` : l'allumage
 
+Avant de le lire, un mot sur `import` et `export`. Chaque fichier JavaScript est un **module** : ses variables lui sont privées. Pour partager quelque chose avec un autre fichier, on l'**exporte** (`export default App;` met `App` à disposition) et l'autre fichier l'**importe** (`import App from './App.jsx'` va le chercher). Un chemin qui commence par `./` signifie « dans le même dossier ». Les accolades, comme dans `import { StrictMode } from 'react'`, servent à importer un élément précis d'une bibliothèque, et `import './index.css'` charge simplement un fichier de style.
+
 ```jsx
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
@@ -96,7 +98,7 @@ Sauvegarde. La page change instantanément : c'est ton premier composant en marc
 
 Deux petites retouches pour partir sur de bonnes bases :
 
-1. Le template importe un style (`App.css`) qui n'existe plus dans ton `App.jsx`. Tu peux supprimer le fichier `src/App.css` (et le dossier `src/assets/` dont tu n'as plus besoin).
+1. Ton nouveau `App.jsx` n'importe plus `App.css` (l'ancien le faisait). Tu peux donc supprimer le fichier `src/App.css` et le dossier `src/assets/`, qui ne servent plus.
 2. Remplace le contenu de `src/index.css` par [`code-demo/index.css`](./code-demo/index.css). C'est la feuille de style du cours : fond sombre, cartes, barre de vie. Tu n'as rien à y comprendre.
 
 ---
@@ -222,6 +224,10 @@ function HeroSheet() {
 
 Tu peux mettre dans les accolades n'importe quelle **expression** (quelque chose qui produit une valeur) : une variable, un calcul, un appel de fonction, un accès à une propriété d'objet. Tu reconnais le Chapitre 1 : c'est ton objet `hero`, affiché.
 
+Attention : React sait afficher du **texte**, des **nombres** et des **éléments JSX**. Les valeurs `true`, `false`, `null` et `undefined` n'affichent rien. En revanche, un **objet** (`{hero}`) fait planter la page : React ne sait pas comment dessiner un objet entier. Affiche ses propriétés une par une (`{hero.name}`).
+
+Enfin, un commentaire dans le JSX s'écrit `{/* mon commentaire */}` : c'est une expression vide avec un commentaire JavaScript dedans.
+
 ### Règle 5 : pas de `if` dans les accolades, mais deux alternatives
 
 Une accolade accepte une **expression**, pas une **instruction**. `if (...) { ... }` est une instruction : elle est donc interdite. Voici les deux outils à utiliser à la place.
@@ -305,11 +311,11 @@ Une chose que React ne fait pas : il ne modifie pas ton fichier HTML. Il constru
 
 1. **Lis ce chapitre** en tapant le code toi-même, sans copier-coller (45 min).
 2. **Copie la démo** [`code-demo/App.jsx`](./code-demo/App.jsx), lance-la, et modifie les données (15 min).
-3. **Fais la Quête 2** dans [`quete-2.md`](./quete-2.md) (2-3 h, 4 phases).
+3. **Fais la Quête 2** dans [`quete-2.md`](./quete-2.md) (3-4 h, 4 phases).
 4. **Passe le [test rapide](./test-rapide.md)** (15 min).
 
 ## Prochaines étapes
 
 Tu sais afficher des données avec des composants. Mais ils ne sont pas encore réutilisables : un composant, un seul héros. Au **Chapitre 3**, tu apprends à leur passer des données (les props) et à afficher des listes entières d'aventuriers.
 
-👉 Chapitre 3 : Les Composants et les Listes *(à venir)*
+👉 [Chapitre 3 : Les Composants et les Listes](../03-composants-listes/README.md)

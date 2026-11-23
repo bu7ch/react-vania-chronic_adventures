@@ -9,16 +9,16 @@ Ce document explique **chaque dossier et chaque fichier** du repo `bu7ch/react-v
 
 ## 📋 Table des matières
 
-1. [Vue d'ensemble](#vue-densemble)
-2. [Racine du projet](#racine-du-projet)
-3. [Dossier `chapitres/`](#dossier-chapitres)
-4. [Dossier `projets-complets/`](#dossier-projets-complets)
-5. [Dossier `ateliers-comparatifs/`](#dossier-ateliers-comparatifs)
-6. [Dossier `bonus/`](#dossier-bonus)
-7. [Dossier `ressources/`](#dossier-ressources)
-8. [Dossier `community/`](#dossier-community)
-9. [Dossier `.github/`](#dossier-github)
-10. [Convention de nommage](#conventions-de-nommage)
+1. [Vue d'ensemble](#-vue-densemble)
+2. [Racine du projet](#-racine-du-projet)
+3. [Dossier `chapitres/`](#-dossier-chapitres)
+4. [Dossier `projets-complets/`](#-dossier-projets-complets)
+5. [Dossier `ateliers-comparatifs/`](#-dossier-ateliers-comparatifs)
+6. [Dossier `bonus/`](#-dossier-bonus)
+7. [Dossier `ressources/`](#-dossier-ressources)
+8. [Dossier `community/`](#-dossier-community)
+9. [Dossier `.github/`](#-dossier-github)
+10. [Convention de nommage](#-conventions-de-nommage)
 
 ---
 
@@ -246,15 +246,15 @@ chapitres/
 │
 ├── 📁 mini-exos/                    ← Exercices rapides (5-10 min chacun)
 │   ├── exo-variables.js
+│   ├── exo-fonctions.js             (inclut les arrow functions)
 │   ├── exo-objets.js
-│   ├── exo-destructuring.js
-│   └── exo-arrow-functions.js
+│   └── exo-destructuring.js         (exercice à compléter)
 │
 ├── 📁 solutions/                    ← Réponses & code complet
 │   ├── phase1-create-starter.js     ← Code de départ (fourni)
 │   ├── phase2-analyze.md            ← Réponses aux questions
 │   ├── phase3-evaluate.md           ← Analyse comparative
-│   └── phase4-create-free.js        ← Solution du défi open-ended
+│   └── phase4-create.js             ← Solution du défi open-ended
 │
 └── 📁 variantes/                    ← Approches alternatives (bonus)
     ├── avec-classes.js
@@ -262,7 +262,7 @@ chapitres/
     └── explications.md
 ```
 
-> **ℹ️ Où sont les solutions ?** Pour ne pas gâcher la quête, les dossiers `solutions/` ne sont **pas** sur `main` : ils vivent sur des branches dédiées (`solutions-ch1-phase2`, etc. — voir le [README](./README.md#-les-branches-du-dépôt)). L'arborescence ci-dessus montre le contenu de ces branches. Sur `main`, tu ne trouves que l'énoncé.
+> **ℹ️ Où sont les solutions ?** Pour ne pas gâcher la quête, les dossiers `solutions/` ne sont **pas** sur `main` : ils vivent sur des branches dédiées (une par chapitre : `solutions-ch1-phase2`, `solutions-ch2-phase2`, etc. — voir le [README](./README.md#-les-branches-du-dépôt)). L'arborescence ci-dessus montre le contenu de ces branches. Sur `main`, tu ne trouves que l'énoncé.
 
 ### Détail : le fichier `README.md`
 
@@ -408,7 +408,7 @@ Exemple :
 Pour 100 héros, Approche C est meilleure parce que...
 ```
 
-#### `phase4-create-free.js`
+#### `phase4-create.js`
 **UNE** solution possible au défi (pas LA SEULE)
 
 Important : on montre UNE approche parmi plusieurs.
@@ -635,7 +635,7 @@ community/
 **FAQ.md :**
 ```markdown
 ## Q : Je bloque sur le Ch 3, Phase 4
-A : Consulte d'abord la solution sur `solutions-ch3-phase4`...
+A : Consulte d'abord la solution sur `solutions-ch3-phase2`...
 
 ## Q : Puis-je traduire le cours en espagnol ?
 A : Oui ! Voir CONTRIBUTE.md pour le processus...
@@ -783,10 +783,9 @@ solutions/                      (kebab-case)
 
 ```
 main                            (code stable)
-solutions-ch1-phase2            (solutions d'un chapitre/phase)
-solutions-ch1-phase4
-solutions-ch2-phase4
-solutions-ch45-mini-exos        (tous les mini-exos)
+solutions-ch1-phase2            (solutions des phases 2 et 4 du Ch 1)
+solutions-ch2-phase2            (idem pour le Ch 2, à venir)
+solutions-ch45-mini-exos        (solutions des mini-exos du Ch 4.5, à venir)
 
 feat/new-chapter-5              (nouvelles features)
 fix/typo-ch1                    (corrections)

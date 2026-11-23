@@ -1,15 +1,15 @@
 # React.js pour les aventuriers 🎮⚔️
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-[![GitHub stars](https://img.shields.io/github/stars/bu7ch/react-vania-chronic_adventures?style=social)](https://github.com/react-vania/react-vania-chronic_adventures
-)
-[![Discord](https://img.shields.io/discord/YOUR_DISCORD_ID?label=Discord&logo=discord)](https://discord.gg/YOUR_INVITE)
+[![GitHub stars](https://img.shields.io/github/stars/bu7ch/react-vania-chronic_adventures?style=social)](https://github.com/bu7ch/react-vania-chronic_adventures)
 
 > **Un voyage immersif dans l'univers React — Du débutant au créateur de jeux**
 
 Bienvenue dans React-vania Chronicle Adventures ! Ce n'est pas un manuel technique ennuyeux. C'est une **quête initiatique** où chaque concept React devient une mécanique de jeu, chaque exercice une bataille.
 
-**Traduit en :** Français, Anglais | **Dernière mise à jour :** Mai 2026
+**Langue :** Français | **Dernière mise à jour :** Novembre 2026
+
+> 🚧 **État du cours :** les chapitres 1, 2 et 3 sont disponibles. Les chapitres 4 et 4.5 sont en cours d'écriture ; le reste est à venir (voir la [feuille de route](./ROADMAP.md)).
 
 ---
 
@@ -20,7 +20,7 @@ Bienvenue dans React-vania Chronicle Adventures ! Ce n'est pas un manuel techniq
 | **Accessibilité** | Gratuit + €20 | $300 | €159 | Gratuit |
 | **Pédagogie** | Analyze/Evaluate/Create | Expert | Débutant | Basique |
 | **Métaphore immersive** | ✅ RPG | ❌ Non | ❌ Non | ❌ Non |
-| **Chapitre technique** | ✅ Ch 4.5 | Oui | Non | Non |
+| **Chapitre technique** | ✅ Ch 4.5 (à venir) | Oui | Non | Non |
 | **Dépôt public** | ✅ Solutions commentées | Non | Paywall | Oui |
 | **Temps d'apprentissage** | 30-40h | 50h+ | 20h | 50h+ |
 
@@ -33,13 +33,13 @@ Bienvenue dans React-vania Chronicle Adventures ! Ce n'est pas un manuel techniq
 ```
 PARTIE 1 : FONDATIONS (Chapitres 1-3)
 ├── Ch 1 : Le Royaume de JavaScript
-│   └─ Variables, fonctions, objets
+│   └─ Variables, fonctions, objets, destructuring
 ├── Ch 2 : Bienvenue à React-vania
-│   └─ Setup Vite, premier composant
+│   └─ Setup Vite, premier composant, JSX
 └── Ch 3 : Les Composants + Listes
-    └─ Props, JSX, .map(), clés
+    └─ Props, listes, .map(), clés
 
-PARTIE 2 : LOGIQUE (Chapitres 4-4.5)
+PARTIE 2 : LOGIQUE (Chapitres 4-4.5, en cours d'écriture)
 ├── Ch 4 : L'État = Ta Barre de Santé
 │   └─ useState, états multiples
 └── Ch 4.5 : La forge du réactomancien
@@ -59,15 +59,14 @@ PARTIE 3 : PROJETS (Chapitres 5-6+)
 
 ```bash
 # Clone le repo
-git clone https://github.com/bu7ch/react-vania-chronic_adventures
-.git
-cd aventuriers
+git clone https://github.com/bu7ch/react-vania-chronic_adventures.git
+cd react-vania-chronic_adventures/aventuriers
 
-# Ouvre le fichier Markdown du cours
-cat ./chapitres/01-royaume-javascript.md
+# Ouvre le premier chapitre
+cat ./chapitres/01-royaume-javascript/README.md
 
-# Ou lit directement sur GitHub
-# → Chapitres > Ch 1 > README.md
+# Ou lis directement sur GitHub
+# → aventuriers > chapitres > 01-royaume-javascript > README.md
 ```
 
 ### **2. Faire les quêtes (exercices)**
@@ -83,14 +82,12 @@ Chaque chapitre a **4 phases** :
 
 ### **3. Vérifier tes réponses (solutions)**
 
-Les solutions sont sur des branches :
+Les solutions sont sur des branches, une par chapitre (`solutions-chN-phase2`), qui regroupent les solutions des phases 2 et 4 (la Phase 3 est une question d'opinion) :
 
 ```bash
-# Voir la solution de la Phase 2 (Analyze) du Ch 1
+# Voir les solutions du Ch 1
+git fetch origin
 git checkout solutions-ch1-phase2
-
-# Voir la solution de la Phase 4 (Create libre) du Ch 3
-git checkout solutions-ch3-phase4
 
 # Revenir au code principal
 git checkout main
@@ -100,8 +97,10 @@ git checkout main
 
 ## 📂 Structure du dépôt
 
+> 🚧 Ce plan montre la structure **cible**. Aujourd'hui existent : `README.md`, `GETTING_STARTED.md`, `STRUCTURE.md`, `CONTRIBUTE.md`, `ROADMAP.md`, `CHANGELOG.md`, `LICENSE` et `chapitres/` (chapitres 1 à 3). Les autres dossiers sont à venir. Les dossiers `solutions/` vivent sur des branches (voir plus bas).
+
 ```
-react-vania/aventuriers/
+aventuriers/
 │
 ├── 📄 README.md (ce fichier)
 ├── 📄 GETTING_STARTED.md (guide détaillé)
@@ -113,10 +112,12 @@ react-vania/aventuriers/
 │   │   ├── README.md               ← Contenu du chapitre
 │   │   ├── quete-1.md              ← Énoncé de la quête
 │   │   ├── mini-exos/              ← Exercices rapides
+│   │   │   ├── exo-variables.js
+│   │   │   ├── exo-fonctions.js
 │   │   │   ├── exo-objets.js
 │   │   │   └── exo-destructuring.js
-│   │   ├── solutions/
-│   │   │   ├── phase2-analyze.js   ← Réponses aux questions
+│   │   ├── solutions/              ← Sur la branche solutions-ch1-phase2
+│   │   │   ├── phase2-analyze.md   ← Réponses aux questions
 │   │   │   └── phase4-create.js    ← Solution du défi
 │   │   └── test-rapide.md          ← Auto-évaluation
 │   │
@@ -124,26 +125,19 @@ react-vania/aventuriers/
 │   │   ├── README.md
 │   │   ├── quete-2.md
 │   │   ├── code-demo/
-│   │   │   └── App.jsx             ← Exemple complet
-│   │   ├── solutions/
+│   │   │   ├── App.jsx             ← Exemple complet
+│   │   │   └── index.css           ← Style du cours
 │   │   └── test-rapide.md
 │   │
 │   ├── 03-composants-listes/
 │   │   ├── README.md
 │   │   ├── quete-3.md
 │   │   ├── projets-exemples/
-│   │   │   ├── hero-gallery/
-│   │   │   │   ├── App.jsx
-│   │   │   │   ├── HeroCard.jsx
-│   │   │   │   └── App.css
-│   │   │   └── item-list/
-│   │   ├── solutions/
-│   │   │   ├── phase2-analyze.md
-│   │   │   ├── phase3-evaluate.md
-│   │   │   └── phase4-create.jsx
+│   │   │   ├── hero-gallery/       ← App, HeroGallery, HeroCard, App.css
+│   │   │   └── item-list/          ← App, Panel, ItemRow
 │   │   └── test-rapide.md
 │   │
-│   ├── 04-etat/
+│   ├── 04-etat/                    (à venir)
 │   │   ├── README.md
 │   │   ├── quete-4.md
 │   │   ├── ateliers-comparatifs/
@@ -152,7 +146,7 @@ react-vania/aventuriers/
 │   │   ├── solutions/
 │   │   └── test-rapide.md
 │   │
-│   └── 04-5-forge-reactomancien/
+│   └── 04-5-forge-reactomancien/   (à venir)
 │       ├── README.md
 │       ├── concepts/
 │       │   ├── dom-virtuel.md
@@ -253,24 +247,22 @@ react-vania/aventuriers/
 
 ## 🌿 Les branches du dépôt
 
-```bash
-main/                           ← Code principal (ce que tu lis)
-├── solutions-ch1-phase2/       ← Solutions Phase 2 (Analyze) Ch 1
-├── solutions-ch1-phase4/       ← Solutions Phase 4 (Create) Ch 1
-├── solutions-ch2-phase2/
-├── solutions-ch2-phase4/
-├── solutions-ch3-phase2/
-├── solutions-ch3-phase4/
-├── solutions-ch4-phase4/       ← (Phase 2-3 pas de défi)
-├── solutions-ch45-mini-exos/   ← 6 mini-exos testables
-├── bonus-advanced/             ← Contenu avancé (React 18+)
-└── community-projects/         ← Projets de la communauté
 ```
+main/                           ← Code principal (ce que tu lis)
+├── solutions-ch1-phase2        ← Solutions du Ch 1 (phases 2 et 4)
+├── solutions-ch2-phase2        ← à venir
+├── solutions-ch3-phase2        ← à venir
+├── solutions-ch4-phase2        ← à venir
+└── solutions-ch45-mini-exos    ← à venir (les 6 mini-exos du Ch 4.5)
+```
+
+La convention : **une branche de solutions par chapitre**, nommée `solutions-chN-phase2`. Elle regroupe les solutions de toutes les phases du chapitre qui en ont une (les Phases 2 et 4). La Phase 3 (Evaluate) n'a pas de « bonne » réponse unique.
 
 **Comment utiliser :**
 
 ```bash
-# Tu codes et tu bloques sur le Ch 1, Phase 2
+# Tu codes et tu bloques sur le Ch 1
+git fetch origin
 git checkout solutions-ch1-phase2
 
 # Tu vois la solution, tu analyses
@@ -289,29 +281,17 @@ git checkout main
 3. Lis le contenu
 4. Fais la quête dans `quete-X.md`
 5. Code en parallèle
-6. Consulte `solutions/` si besoin
+6. Consulte la branche de solutions du chapitre si besoin
 
 ### **Option 2 : En local avec VS Code**
 
 ```bash
-git clone https://github.com/react-vania/aventuriers.git
-cd aventuriers
+git clone https://github.com/bu7ch/react-vania-chronic_adventures.git
+cd react-vania-chronic_adventures/aventuriers
 code .
 
 # Ouvre Markdown Preview Enhanced (extension VS Code)
 # Ctrl+K, V (ou Cmd+K, V sur Mac)
-```
-
-### **Option 3 : Comme un eBook**
-
-```bash
-# Installe mdbook
-npm install -g mdbook
-
-# Génère le site statique
-mdbook serve
-
-# Visite http://localhost:3000
 ```
 
 ---
@@ -324,9 +304,9 @@ mdbook serve
 Semaine 1 : Chapitre 1 (JavaScript) + Mini-exos
 Semaine 2 : Chapitre 2 (React setup)
 Semaine 3 : Chapitre 3 (Composants)
-Semaine 4 : Chapitre 4 (État) + Chapitre 4.5 (Forge)
-Semaine 5 : Projets pratiques
-Semaine 6-7 : Projet final : construire un jeu
+Semaine 4 : Chapitre 4 (État) + Chapitre 4.5 (Forge)        (à venir)
+Semaine 5 : Projets pratiques                               (à venir)
+Semaine 6-7 : Projet final : construire un jeu              (à venir)
 ```
 
 **Tempo :** 1 chapitre/semaine, 5-6h/semaine
@@ -366,25 +346,13 @@ npm run dev
 # Visite http://localhost:5173
 ```
 
-### **Structure suggérée pour tes fichiers**
+### **Où mettre tes fichiers ?**
 
-```
-mon-aventure-react/
-├── src/
-│   ├── ch1-quete/
-│   │   └── Hero.jsx
-│   ├── ch2-quete/
-│   │   └── App.jsx
-│   ├── ch3-quete/
-│   │   ├── HeroCard.jsx
-│   │   ├── HeroGallery.jsx
-│   │   └── App.jsx
-│   ├── ch4-quete/
-│   │   ├── ExperienceTracker.jsx
-│   │   └── App.jsx
-│   └── App.css
-└── README.md (documenter ta progression)
-```
+- **Chapitre 1 et Quête 1 :** pas de projet React. Écris du JavaScript pur dans un fichier (par exemple `hero.js`) et lance-le avec `node hero.js`.
+- **Chapitre 2 :** tu remplaces le contenu de `src/App.jsx` de ton projet Vite (voir le chapitre).
+- **Chapitre 3 :** tu ajoutes tes composants à plat dans `src/` (`HeroCard.jsx`, `StatBar.jsx`, `HeroGallery.jsx`...) et `App.jsx` les importe.
+
+Astuce : fais un `git commit` à la fin de chaque quête (ou copie ton projet) pour garder une trace de ta progression.
 
 ---
 
@@ -393,18 +361,18 @@ mon-aventure-react/
 ### **"Je bloque sur une quête, où chercher de l'aide ?"**
 
 ```
-1. Consulte les mini-exos (exo1-observer-rerender.jsx, etc)
-2. Vérifies la solution correspondante (solutions-chX-phaseY)
+1. Relis la section du chapitre et refais le mini-exo similaire (quand il y en a)
+2. Vérifie la solution correspondante (branche solutions-chN-phase2)
 3. Ouvre une issue GitHub ("Help wanted: Ch 3, Phase 2")
-4. Demande sur Discord (lien ci-dessous)
+4. Pose ta question dans les GitHub Discussions (lien ci-dessous)
 ```
 
 ### **"Comment je sais si mes réponses sont bonnes ?"**
 
 ```
-- Phase 2 (Analyze) : Réponses dans solutions-chX-phase2/
+- Phase 2 (Analyze) : Réponses sur la branche solutions-chN-phase2
 - Phase 3 (Evaluate) : Aucune "bonne" réponse, c'est une opinion
-- Phase 4 (Create libre) : Vérifie sur solutions-chX-phase4/, il y a variantes
+- Phase 4 (Create libre) : Vérifie sur la même branche, il y a des variantes
 - Test rapide : Auto-évaluation à la fin du chapitre
 ```
 
@@ -441,10 +409,10 @@ Ton nom sera dans les crédits ! 🙌
 
 ## 🎯 Objectifs du projet
 
-- ✅ Former 50K+ débutants en React
-- ✅ Créer un standard pédagogique (Higher Order Learning)
-- ✅ Construire une communauté francophone/anglophone
-- ✅ Prouver qu'un cours gratuit peut rivaliser avec du payant
+- 🎯 Former 50K+ débutants en React
+- 🎯 Créer un standard pédagogique (Higher Order Learning)
+- 🎯 Construire une communauté francophone/anglophone
+- 🎯 Prouver qu'un cours gratuit peut rivaliser avec du payant
 - 🚀 Lancer des formations avancées (sur la base de ce contenu)
 
 ---
@@ -452,13 +420,13 @@ Ton nom sera dans les crédits ! 🙌
 ## 📊 Progression du projet
 
 ```
-Juin 2026   : ✅ Ch 1-4.5 terminés
-Juillet     : ✅ Solutions Ch 1-4.5 + Discord lancé
-Août        : 🔄 Ch 5-6 en écriture
-Sept        : ✅ Projets complets (Hero Gallery, Quest System)
-Oct         : ✅ Bonus (TypeScript, Testing, Patterns)
-Nov-Déc     : 🚀 Version payante lancée
+✅ Chapitres 1, 2, 3 : écrits (README, quête, test rapide, exemples)
+🔄 Chapitre 4 (état) puis 4.5 (forge) : en cours d'écriture
+🔜 Chapitres 5-6 (patterns, useEffect) : à venir
+🔜 Projets complets, bonus, ressources : à venir
 ```
+
+Le détail et l'ordre prévu sont dans la [feuille de route](./ROADMAP.md).
 
 ---
 
@@ -502,6 +470,7 @@ Libre de partager & modifier, tant que tu :
 | **Discussions GitHub** | [Pose une question](https://github.com/bu7ch/react-vania-chronic_adventures/discussions) |
 | **Feuille de route** | [`ROADMAP.md`](./ROADMAP.md) |
 | **Changelog** | [`CHANGELOG.md`](./CHANGELOG.md) |
+| **Contribuer** | [`CONTRIBUTE.md`](./CONTRIBUTE.md) |
 
 ---
 
@@ -523,7 +492,7 @@ Escalade :
 2️⃣  Consulter le mini-exo similaire
 3️⃣  Vérifier la solution (apprendre comment ça marche)
 4️⃣  Ouvrir une issue GitHub
-5️⃣  Demander sur Discord
+5️⃣  Poser ta question dans les GitHub Discussions
 ```
 
 Ne reste pas bloqué > 30 min. C'est normal de consulter les solutions !
@@ -536,12 +505,12 @@ Tu as tout ce qu'il te faut pour devenir un maître du React. Suis les chapitres
 
 **Première étape ?** Lis [`chapitres/01-royaume-javascript/README.md`](./chapitres/01-royaume-javascript/README.md)
 
-**Questions ?** Ouvre une [Discussion](https://github.com/bu7ch/react-vania-chronic_adventures/discussions) ou un [Issue](https://github.com/bu7ch//react-vania-chronic_adventures/issues).
+**Questions ?** Ouvre une [Discussion](https://github.com/bu7ch/react-vania-chronic_adventures/discussions) ou un [Issue](https://github.com/bu7ch/react-vania-chronic_adventures/issues).
 
-**À bientôt sur le Discord ! ⚔️**
+**À bientôt dans les Discussions ! ⚔️**
 
 ---
 
 *"Un apprenant aujourd'hui, un créateur demain."* — bu7ch
 
-**Dernière mise à jour :** Mai 2026 | **Mainteneur :** [@react-vania](https://github.com/bu7ch)
+**Dernière mise à jour :** Novembre 2026 | **Mainteneur :** [@bu7ch](https://github.com/bu7ch)

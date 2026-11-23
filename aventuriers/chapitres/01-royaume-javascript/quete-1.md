@@ -4,7 +4,7 @@
 
 Créer un objet `hero` complet, le tester, l'analyser critiquement, et construire un système pour 2 rôles différents.
 
-**Durée estimée :** 2-3 heures  
+**Durée estimée :** 3-4 heures  
 **Difficultés :** Facile → Moyen → Difficile
 
 ---
@@ -25,6 +25,8 @@ const hero = {
   level: 1
 };
 ```
+
+> 💡 **Où écrire ce code ?** Dans un fichier `hero.js` (JavaScript pur, pas de React), lancé avec `node hero.js`. Les méthodes des étapes suivantes se placent **dans l'objet `hero`**, séparées par des virgules, comme `name` ou `health`.
 
 #### Étape 2 : Ajouter la méthode `attack()`
 
@@ -98,7 +100,21 @@ console.log(hero.health);  // 100
 console.log(hero.mana);    // 75
 ```
 
-#### Étape 5 : Tests complets
+#### Étape 5 : Ajouter la méthode `takeDamage(amount)`
+
+Cette méthode doit :
+- Réduire `health` de `amount`
+- Ne jamais descendre sous 0 (utilise `Math.max()`)
+- Afficher : "[name] subit X dégâts. Santé : Y"
+
+**Comment tester :**
+```javascript
+hero.health = 85;
+hero.takeDamage(20);   // "Aragorn subit 20 dégâts. Santé : 65"
+hero.takeDamage(500);  // "Aragorn subit 500 dégâts. Santé : 0"
+```
+
+#### Étape 6 : Tests complets
 
 ```javascript
 // Teste tout ensemble
@@ -110,7 +126,7 @@ hero.attack();
 
 console.log("\n=== DÉGÂTS ===");
 hero.health = 85;
-hero.takeDamage(20);  // Si tu as ajouté takeDamage
+hero.takeDamage(20);
 console.log(hero.health);  // 65
 
 console.log("\n=== SOINS ===");
@@ -123,7 +139,7 @@ console.log(hero);
 
 ### À soumettre
 
-Ton code JavaScript (copie-colle dans une issue ou un gist GitHub).
+Ton code JavaScript. (Optionnel : partage-le dans une issue ou un gist GitHub si tu veux un retour. Sinon, garde-le pour toi.)
 
 ---
 
@@ -139,39 +155,42 @@ Ton code JavaScript (copie-colle dans une issue ou un gist GitHub).
 // Option A : avec this
 const hero = {
   name: "Aragorn",
-  attack_with_this: function() {
+  attackWithThis: function() {
     console.log(`${this.name} attaque !`);
   }
 };
 
-// Option B : avec le nom hero
+// Option B : avec le nom de l'objet
 const hero2 = {
   name: "Elsa",
-  attack_without_this: function() {
+  attackWithoutThis: function() {
     console.log(`${hero2.name} attaque !`);
   }
 };
 
-// Maintenant, teste ceci :
-const warrior = hero;
-warrior.attack_with_this();  // Marche ?
+// Deux nouveaux personnages empruntent chacun une méthode :
+const warrior = { name: "Boromir", attack: hero.attackWithThis };
+const mage = { name: "Gandalf", attack: hero2.attackWithoutThis };
 
-const mage = hero2;
-mage.attack_without_this();  // Marche ? Pourquoi ?
+warrior.attack();  // Quel nom s'affiche ?
+mage.attack();     // Quel nom s'affiche ? Pourquoi ?
 ```
 
 **Questions :**
-1. Quelle approche affiche correctement le nom du guerrier ?
-2. Qu'est-ce qui se passe si tu renommes `hero2` en `player2` ?
-3. Pourquoi `this` est meilleur ?
+1. Quel nom affiche chaque appel ? Écris ta prédiction **avant** de lancer le code.
+2. Pourquoi `mage.attack()` n'affiche-t-il pas « Gandalf » ?
+3. Qu'arrive-t-il à l'option B si tu renommes la variable `hero2` en `player2` ?
+4. Pourquoi `this` est-il plus souple ?
 
-**Réponse attendue :** `this` se réfère toujours à l'objet actuel, peu importe comment on l'appelle.
+**Réponse attendue :** dans une méthode appelée sous la forme `objet.methode()`, `this` désigne l'objet à gauche du point. L'option A marche donc pour n'importe quel objet qui possède la méthode (`warrior.attack()` affiche « Boromir »). L'option B écrit en dur le nom `hero2` : elle affiche toujours « Elsa » et casse si on renomme la variable.
+
+**À retenir :** `this` dépend de **la façon dont on appelle** la méthode, pas de l'endroit où elle est écrite. C'est pourquoi `const f = hero.attackWithThis; f();` ne marche plus (plus d'objet à gauche du point), et pourquoi on n'écrit pas une méthode d'objet en arrow function.
 
 ---
 
 ### Q2 : Qu'est-ce que `Math.min()` et `Math.max()` font réellement ?
 
-**Test à faire :**
+**Test à faire :** (`for (let i = 0; i < 5; i++) { ... }` répète le bloc 5 fois : `i` vaut 0, puis 1, ..., puis 4)
 
 ```javascript
 const hero = { health: 100 };
@@ -245,6 +264,15 @@ console.log(`Dégâts : ${dmg}`);  // L'appelant affiche
 
 Tu dois gérer **100 héros** différents dans ton jeu. Comment tu organiserais le code ?
 
+### Boîte à outils pour lire les approches
+
+Les approches B et C utilisent quatre notions nouvelles. Voici de quoi les lire :
+
+- **Une factory function** est une fonction qui *fabrique* un objet et le renvoie (`createHero(...)` renvoie un héros tout neuf).
+- **Un paramètre par défaut** (`health = 100`) donne une valeur au paramètre si on ne l'a pas fourni.
+- **Une propriété raccourcie** : `{ name, health }` est la forme courte de `{ name: name, health: health }`.
+- **Une classe** (`class Hero { ... }`) est un modèle pour fabriquer des objets. `constructor` s'exécute à la création, `new Hero(...)` crée un objet, et dans le constructeur `this` désigne cet objet en cours de création. Les méthodes déclarées dans la classe (`attack() { ... }`) sont partagées par tous les héros créés.
+
 ### Approche A : Copier-coller
 
 ```javascript
@@ -252,14 +280,14 @@ const hero1 = {
   name: "Aragorn",
   health: 100,
   level: 1,
-  attack: function() { ... }
+  attack: function() { /* ... */ }
 };
 
 const hero2 = {
   name: "Elsa",
   health: 50,
   level: 3,
-  attack: function() { ... }
+  attack: function() { /* ... */ }
 };
 
 // ... (répète 98 fois)
@@ -308,17 +336,18 @@ const hero2 = new Hero("Elsa", 50, 3);
 
 ### Ta tâche
 
-Crée une grille d'analyse :
+Remplis cette grille en notant chaque approche de **1 (mauvais) à 5 (excellent)**, et justifie chaque note en une phrase :
 
 | Critère | Approche A | Approche B | Approche C |
 |---------|-----------|-----------|-----------|
-| **Répétition de code** | Énorme (100x) | Faible | Faible |
-| **Facile de modifier la méthode attack pour TOUS** | Très difficile (changer 100 fois) | Facile (changer 1 fois) | Facile (changer 1 fois) |
-| **Facile d'ajouter une validation** | ❌ | ⚠️ | ✅ |
-| **Lisibilité** | Facile | Moyenne | Moyenne |
-| **Scalabilité (pour 1000 héros)** | Cauchemar | Bon | Bon |
-| **Compréhension (pour un débutant)** | Très facile | Facile | Difficile |
-| **Taille du code** | Énorme | Petit | Petit |
+| **Répétition de code** | | | |
+| **Facile de modifier la méthode `attack` pour TOUS les héros** | | | |
+| **Facile d'ajouter une validation** (par exemple une santé qui ne dépasse jamais 100) | | | |
+| **Lisibilité** | | | |
+| **Scalabilité (pour 1000 héros)** | | | |
+| **Compréhension (pour un débutant)** | | | |
+| **Taille du code** | | | |
+| **Total** | | | |
 
 **Conclusion :**
 Laquelle choisirais-tu pour 100 héros ? Pourquoi ?
@@ -381,13 +410,15 @@ mage.attack();          // "Pas assez de mana !" (échoue)
 
 #### Pistes (utilise ou ignore)
 
+Quelques notions pour lire les pistes : `{ ...base, ...autre }` (le **spread**) copie toutes les propriétés de `base` puis celles de `autre` dans un **nouvel** objet. `roles[role]` est l'accès par crochets : on lit la propriété dont le **nom** est dans la variable `role` (voir `mini-exos/exo-objets.js`). Les `/* ... */` marquent du code à écrire toi-même.
+
 **Piste 1 : Factory + Object spread**
 ```javascript
 function createHero(name, role) {
   const base = { name, health: 100, mana: 50, level: 1 };
   const roles = {
-    warrior: { attack() { return 20; }, heal() { ... } },
-    mage: { attack() { ... }, heal() { ... } }
+    warrior: { attack() { return 20; }, heal() { /* à toi */ } },
+    mage: { attack() { /* à toi */ }, heal() { /* à toi */ } }
   };
   return { ...base, ...roles[role] };
 }
@@ -399,9 +430,9 @@ function createHero(name, role) {
   const hero = { name, health: 100, mana: 50, level: 1 };
   if (role === "warrior") {
     hero.attack = function() { return 20; };
-    hero.heal = function() { ... };
+    hero.heal = function() { /* à toi */ };
   } else if (role === "mage") {
-    // ...
+    // à toi
   }
   return hero;
 }
@@ -416,14 +447,15 @@ class Hero {
   }
 }
 
+// `extends` : Warrior et Mage reprennent tout ce que Hero sait faire
 class Warrior extends Hero {
   attack() { return 20; }
-  heal() { ... }
+  heal() { /* à toi */ }
 }
 
 class Mage extends Hero {
-  attack() { ... }
-  heal() { ... }
+  attack() { /* à toi */ }
+  heal() { /* à toi */ }
 }
 ```
 

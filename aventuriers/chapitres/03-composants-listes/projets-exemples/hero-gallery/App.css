@@ -1,0 +1,15 @@
+/* 🎨 Style de la galerie (à ajouter À CÔTÉ de src/index.css du Chapitre 2).
+   Rien à comprendre ici : une grille qui range les cartes. */
+
+.gallery {
+  display: grid;
+  gap: 1rem;
+}
+
+.hero-card h2 {
+  margin: 0;
+}
+
+.hero-card .subtitle {
+  margin: 0 0 0.75rem;
+}

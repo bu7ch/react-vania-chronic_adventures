@@ -80,6 +80,75 @@ const health = player.health;
 const { name, health } = player;
 ```
 
+### Bonus : les template literals (écrire une phrase avec des variables)
+
+Pour mélanger du texte et des variables, entoure ta phrase de **backticks** (`` ` ``, accent grave) et glisse tes variables dans `${ }` :
+
+```javascript
+const name = "Aragorn";
+const health = 85;
+
+console.log(`${name} a ${health} PV`);               // Aragorn a 85 PV
+console.log(`Après un coup de 20 : ${health - 20} PV`); // Après un coup de 20 : 65 PV
+```
+
+Entre `${ }`, tu peux mettre n'importe quelle expression (un calcul, un appel de fonction). C'est plus lisible que `name + " a " + health + " PV"`, et tu le verras partout dans les quêtes.
+
+### Bonus : les conditions (`if`, `else`, comparer)
+
+Pour faire dépendre le code d'une situation :
+
+```javascript
+const level = 5;
+
+if (level >= 10) {
+  console.log("Légende");
+} else if (level >= 5) {
+  console.log("Vétéran");
+} else {
+  console.log("Recrue");
+}
+```
+
+Les comparaisons à connaître : `===` (égal), `!==` (différent), `<`, `>`, `<=`, `>=`. Utilise toujours **trois** signes pour tester l'égalité : `5 === "5"` vaut `false` (un nombre n'est pas un texte), alors qu'un seul `=` sert à **affecter** une valeur.
+
+### Bonus : `this`, le héros qui parle de lui-même
+
+Dans une méthode d'objet, `this` désigne **l'objet sur lequel on a appelé la méthode** :
+
+```javascript
+const hero = {
+  name: "Aragorn",
+  introduce: function () {
+    return `Je suis ${this.name}`;
+  },
+};
+
+hero.introduce(); // "Je suis Aragorn"  → ici, this = hero
+```
+
+Si un autre objet emprunte la méthode, `this` désigne cet autre objet :
+
+```javascript
+const clone = { name: "Gandalf", introduce: hero.introduce };
+clone.introduce(); // "Je suis Gandalf"  → ici, this = clone
+```
+
+Deux pièges à connaître :
+
+- **Une arrow function n'a pas son propre `this`.** Pour une méthode d'objet qui a besoin de `this`, écris `introduce: function () { ... }` (ou `introduce() { ... }`), jamais `introduce: () => ...`.
+- **Extraire la méthode la détache de son objet.** `const f = hero.introduce; f();` n'appelle plus la méthode « sur `hero` » : `this` ne désigne plus le héros, et tu obtiens `undefined` ou une erreur selon l'endroit où tu lances le code.
+
+### Où écrire et lancer ton code JavaScript
+
+Pour ce chapitre, **pas besoin de React** : tout est du JavaScript pur. Le plus simple :
+
+1. Crée un fichier, par exemple `hero.js`.
+2. Écris ton code dedans, avec des `console.log(...)` pour afficher ce que tu veux voir (`console.log` imprime une valeur dans le terminal).
+3. Lance-le dans le terminal : `node hero.js`.
+
+Tu peux aussi coller du code dans la console de ton navigateur (`F12` → onglet « Console »). Petite précaution : dans un même fichier, tu ne peux pas déclarer deux fois le même nom avec `const`. Si tu copies plusieurs exemples de ce chapitre dans le même fichier, renomme les variables (ou lance-les un par un).
+
 ## Pourquoi ces 4 outils reviennent sans arrêt en React
 
 Tu te demandes peut-être pourquoi on passe un chapitre entier sur du JavaScript « de base ». Parce que **chaque ligne de React que tu vas écrire utilise ces outils** :
@@ -88,9 +157,9 @@ Tu te demandes peut-être pourquoi on passe un chapitre entier sur du JavaScript
 |------------------|-------------------------------|
 | `const` | Chaque composant est une `const` (ou une fonction) que tu ne réassignes jamais |
 | Fonctions | Un composant React **est** une fonction : elle reçoit des données, elle renvoie de l'interface |
-| Arrow functions | Les gestionnaires de clic (`onClick={() => ...}`) et les callbacks de `.map()` |
-| Objets | Les `props` d'un composant sont un objet ; l'état d'un personnage aussi |
-| Destructuring | `function HeroCard({ name, health })` : tu déplies les props directement dans la signature |
+| Arrow functions | Les callbacks de `.map()` (Chapitre 3) et les gestionnaires de clic (Chapitre 4) |
+| Objets | Les `props` d'un composant sont un objet (Chapitre 3) ; l'état d'un personnage aussi (Chapitre 4) |
+| Destructuring | `function HeroCard({ name, health })` : tu déplies les props directement dans la signature (Chapitre 3) |
 
 Un petit aperçu pour te donner envie (tu n'as pas besoin de le comprendre maintenant) :
 
@@ -101,7 +170,7 @@ const HeroCard = ({ name, health }) => `${name} : ${health} PV`;
 HeroCard({ name: "Aragorn", health: 100 }); // "Aragorn : 100 PV"
 ```
 
-Fonction + arrow function + objet + destructuring, en deux lignes. Au Chapitre 2, on remplacera juste la chaîne de caractères par du JSX. Rien de plus.
+Fonction + arrow function + objet + destructuring, en deux lignes. Dans les chapitres suivants, une fonction comme celle-ci renverra de l'interface (du JSX) au lieu d'une phrase. Pas besoin de tout comprendre maintenant : retiens simplement que ce que tu apprends ici est la matière première de React.
 
 ## 🧠 Encadré « Sans métaphore »
 
@@ -115,7 +184,7 @@ Le vocabulaire RPG est là pour t'aider à retenir, pas pour te cacher les vrais
 Deux pièges à connaître dès maintenant :
 
 1. **`const` ne rend pas un objet immuable.** `const player = { health: 100 }; player.health = 50;` fonctionne. `const` interdit seulement de **réassigner** le nom (`player = {...}`). C'est un point qui compte beaucoup en React : on ne modifie jamais un objet d'état directement, on en crée un nouveau.
-2. **`fonction` et `fonction()` sont deux choses différentes.** `castFireball` désigne le sort lui-même, `castFireball(25)` le lance. Tu passeras souvent la première forme à React (`onClick={castFireball}`), presque jamais la seconde.
+2. **`fonction` et `fonction()` sont deux choses différentes.** `castFireball` désigne le sort lui-même, `castFireball(25)` le lance. Tu passeras souvent la première forme à React (au Chapitre 4, `onClick={castFireball}`), presque jamais la seconde.
 
 ## Résumé du chapitre
 
@@ -127,10 +196,10 @@ Deux pièges à connaître dès maintenant :
 
 ## Ton plan d'attaque
 
-1. **Lis ce chapitre** en entier (15 min).
+1. **Lis ce chapitre** en entier, en testant les exemples (30-40 min).
 2. **Lance les mini-exos** dans `mini-exos/` avec Node : `node exo-variables.js` (5-10 min chacun).
    Le dernier, `exo-destructuring.js`, est un exercice à compléter : lis les consignes en commentaire.
-3. **Fais la Quête 1** dans [`quete-1.md`](./quete-1.md) (2-3 h, 4 phases).
+3. **Fais la Quête 1** dans [`quete-1.md`](./quete-1.md) (3-4 h, 4 phases).
 4. **Passe le [test rapide](./test-rapide.md)** pour vérifier que tout est acquis.
 
 Besoin de comparer avec une solution ? Elles sont sur la branche `solutions-ch1-phase2` (voir le [README principal](../../README.md#-les-branches-du-dépôt)). Essaie d'abord, compare ensuite.

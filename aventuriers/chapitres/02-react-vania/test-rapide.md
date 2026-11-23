@@ -162,11 +162,11 @@ Tu utilises l'objet global `hero` (avec `hero.health`). Il y a **trois** cas, al
 - **Question 6 :** 25 pts (réflexion)
 - **Défi bonus :** 30 pts (complet)
 
-**Total :** 130 pts
+**Total :** 120 pts
 
-- ✅ 100+ : Tu as compris ! Va au Chapitre 3
-- ⚠️ 80-100 : Bien, mais relis les sections sur le JSX
-- ❌ < 80 : Relis tout le chapitre
+- ✅ 90+ : Tu as compris ! Va au Chapitre 3
+- ⚠️ 75-89 : Bien, mais relis les sections sur le JSX
+- ❌ < 75 : Relis tout le chapitre
 
 ---
 

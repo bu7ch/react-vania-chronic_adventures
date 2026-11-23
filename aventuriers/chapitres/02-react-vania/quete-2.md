@@ -4,7 +4,7 @@
 
 Construire la page d'accueil d'une taverne : un en-tête, la fiche d'un aventurier avec sa barre de vie, un pied de page. Puis analyser ce qui peut mal tourner, comparer plusieurs façons d'organiser ton code, et enfin affronter seul un défi qui te fera sentir pourquoi les **props** (Chapitre 3) existent.
 
-**Durée estimée :** 2-3 heures
+**Durée estimée :** 3-4 heures
 **Difficulté :** Facile → Moyen → Moyen → Difficile
 **Prérequis :** avoir lu le [Chapitre 2](./README.md) et fait le « ménage » dans ton projet Vite (`src/App.jsx` minimal, `src/index.css` remplacé).
 
@@ -129,7 +129,7 @@ Un bon développeur ne sait pas seulement écrire du code qui marche : il **reco
 2. **Explique** pourquoi, avec les règles du chapitre.
 3. **Corrige**.
 
-Ensuite, vérifie en collant l'extrait dans ton `App.jsx`.
+Ensuite, vérifie : colle l'extrait dans ton `App.jsx`, **fais afficher le composant** par `App` (par exemple `<HeroSheet />`) et regarde la page **et** la console du navigateur (F12). Un composant que personne n'appelle ne s'affiche jamais, donc ne révèle aucun bug de rendu. Pour qu'un extrait fonctionne seul, il peut te manquer `export default` ou la déclaration de `hero` indiquée plus haut.
 
 ### Bug 1
 

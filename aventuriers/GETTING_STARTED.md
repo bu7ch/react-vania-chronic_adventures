@@ -4,18 +4,18 @@ Bienvenue ! Tu es ici parce que tu veux apprendre React. **Tu es au bon endroit.
 
 Ce guide va t'accompagner étape par étape, depuis ton premier setup jusqu'à ta première quête complétée. Pas de magie, pas de suppositions. Juste du code qui marche.
 
-**Durée estimée :** 1-2 heures (première fois)
+**Durée estimée :** environ 1 h pour l'installation et le premier projet, puis le Chapitre 1 (30-40 min) et la Quête 1 (3-4 h).
 
 ---
 
 ## 📋 Table des matières
 
-1. [Prérequis (5 min)](#prérequis)
-2. [Installation (10 min)](#installation)
-3. [Setup du premier projet (15 min)](#setup-du-premier-projet)
-4. [Lire le cours (30-60 min)](#lire-le-cours)
-5. [Faire ta première quête (60-90 min)](#faire-ta-première-quête)
-6. [Troubleshooting](#troubleshooting)
+1. [Prérequis (5 min)](#-prérequis)
+2. [Installation (10 min)](#-installation)
+3. [Setup du premier projet (15 min)](#-setup-du-premier-projet)
+4. [Lire le cours (30-40 min)](#-lire-le-cours)
+5. [Faire ta première quête (3-4 h)](#-faire-ta-première-quête)
+6. [Troubleshooting](#-troubleshooting)
 
 ---
 
@@ -29,13 +29,17 @@ Ce guide va t'accompagner étape par étape, depuis ton premier setup jusqu'à t
 - **Node.js** (gratuit)
 - **30-45 min de temps sans distractions**
 
-### Tu dois avoir :**
+### Tu n'as PAS besoin de :
 
-- ✅ Notion basique de JavaScript (variables, fonctions)
-- ✅ Savoir utiliser un terminal/invite de commande
-- ✅ Savoir naviguer sur GitHub
+- ❌ Savoir programmer en JavaScript : le Chapitre 1 l'enseigne depuis zéro
+- ❌ Connaître React : c'est tout l'objet du cours
 
-**Si tu n'es pas sûr :** Pas de souci ! Lis d'abord la Chapitre 1 du cours. Reviens ici après.
+### Tu dois seulement savoir :
+
+- ✅ Ouvrir un terminal (ou l'invite de commande) et y taper une commande : on te dit exactement lesquelles
+- ✅ Naviguer sur un site web comme GitHub
+
+**Si tu n'es pas sûr :** pas de souci, suis le guide pas à pas.
 
 ---
 
@@ -57,7 +61,7 @@ Node.js est un outil qui te permet d'exécuter du JavaScript en dehors du naviga
    │   ↑ CLIQUE ICI                  │
    └─────────────────────────────────┘
    ```
-3. Attends que ça télécharge (`node-v20.X.X-x64.msi`)
+3. Attends que ça télécharge (un fichier `node-vXX.X.X-x64.msi`)
 4. Double-clique sur le fichier
 5. Clique "Next" → "I Agree" → "Next" → ... → "Finish"
 
@@ -87,6 +91,8 @@ sudo dnf install nodejs npm
 sudo pacman -S nodejs npm
 ```
 
+> ⚠️ Sur Linux, la version proposée par ta distribution est parfois ancienne. Si `node --version` (ci-dessous) affiche moins que `v20.19`, installe plutôt la version **LTS** depuis https://nodejs.org/.
+
 ### ✅ Vérifier que ça marche
 
 Ouvre un terminal/invite de commande et tape :
@@ -99,13 +105,13 @@ npm --version
 Tu devrais voir :
 
 ```
-v20.10.0   (ou une version similaire)
-10.2.4     (ou une version similaire)
+v22.12.0   (ou plus récent : il faut au minimum v20.19)
+10.9.0     (ou une version similaire)
 ```
 
 **Si tu vois les versions :** ✅ C'est bon ! Passe à l'étape 2.
 
-**Si tu vois une erreur :** Voir [Troubleshooting](#troubleshooting)
+**Si tu vois une erreur :** Voir [Troubleshooting](#-troubleshooting)
 
 ---
 
@@ -161,31 +167,31 @@ Le cours est sur GitHub. Tu dois le télécharger sur ton ordi.
 cd ~/Documents
 
 # Clône le dépôt
-git clone https://github.com/react-vania/aventuriers.git
+git clone https://github.com/bu7ch/react-vania-chronic_adventures.git
 
-# Entre dans le dossier
-cd aventuriers
+# Entre dans le dossier du cours
+cd react-vania-chronic_adventures/aventuriers
 ```
 
-Tu devrais voir :
+Tu devrais voir (`ls`) :
 
 ```
-aventuriers/
-├── README.md
-├── GETTING_STARTED.md
-├── chapitres/
-├── projets-complets/
-└── ...
+README.md
+GETTING_STARTED.md
+STRUCTURE.md
+chapitres/
 ```
 
 ### Sans Git (alternative)
 
-1. Va sur https://github.com/react-vania/aventuriers
+1. Va sur https://github.com/bu7ch/react-vania-chronic_adventures
 2. Clique sur le bouton vert **"Code"**
 3. Clique sur **"Download ZIP"**
 4. Dézippe le fichier sur ton ordi
 
-Puis ouvre le dossier dans VS Code.
+Puis ouvre le sous-dossier `aventuriers` dans VS Code.
+
+> ℹ️ Le ZIP ne contient que la branche `main`, donc **pas les solutions** (elles sont sur des branches séparées). Pour les consulter sans Git, utilise le sélecteur de branche sur la page GitHub du dépôt (voir [Vérifier tes réponses](#-vérifier-tes-réponses)).
 
 ---
 
@@ -193,7 +199,7 @@ Puis ouvre le dossier dans VS Code.
 
 ## Étape 4 : Créer un projet React (10-15 min)
 
-Tu vas créer un projet neuf où tu pourras faire les quêtes du cours.
+Tu vas créer un projet neuf où tu pourras faire les quêtes du cours à partir du Chapitre 2. (Le Chapitre 1 et la Quête 1 sont du JavaScript pur : tu peux créer ce projet maintenant ou juste avant le Chapitre 2.)
 
 ### Avec Vite (super rapide, recommandé)
 
@@ -260,7 +266,7 @@ Tu devrais voir une page React basique :
 
 **Si tu vois ça :** ✅ Bravo ! Ton projet marche !
 
-**Si tu vois une erreur :** Voir [Troubleshooting](#troubleshooting)
+**Si tu vois une erreur :** Voir [Troubleshooting](#-troubleshooting)
 
 ---
 
@@ -299,7 +305,7 @@ Dès que tu sauvegardes un fichier, le navigateur se met à jour tout seul. C'es
 
 ### Option A : Sur GitHub (dans le navigateur)
 
-1. Va sur https://github.com/react-vania/aventuriers
+1. Va sur https://github.com/bu7ch/react-vania-chronic_adventures/tree/main/aventuriers
 2. Clique sur le dossier `chapitres/`
 3. Ouvre `01-royaume-javascript/`
 4. Clique sur `README.md`
@@ -328,21 +334,22 @@ Le Chapitre 1 couvre :
 - **Les fonctions** : comment les créer, arrow functions
 - **Les objets** : grouper des données
 - **Le destructuring** : extraire des propriétés
+- **Quelques outils de base** : les phrases avec variables, les conditions, `this`
 
-**Temps de lecture :** 30-45 min
+**Temps de lecture :** 30-40 min
 
 **Ce que tu dois faire :**
 
 ```
 ✅ Lis chaque section
-✅ Teste les exemples dans la console du navigateur (F12)
+✅ Teste les exemples : dans un fichier `.js` lancé avec `node mon-fichier.js`, ou dans la console du navigateur (F12)
 ✅ N'hésite pas à relire si c'est confus
 ❌ Ne panique pas si c'est pas clair au premier coup
 ```
 
 ---
 
-# 🗡️ Faire ta première quête
+# 🎮 Faire ta première quête
 
 ## Étape 7 : Ouvrir la Quête 1
 
@@ -367,48 +374,33 @@ PHASE 4 : CREATE libre (Défi)
 > Ajoute une méthode attack() qui retourne un nombre aléatoire entre 5 et 15
 > ...
 
-**Ouvre le fichier `src/App.jsx` dans VS Code**
+**Pas de React pour cette quête : c'est du JavaScript pur.**
 
-Remplace le contenu par :
-
-```javascript
-export default function App() {
-  // Crée ton objet hero ici
-  const hero = {
-    name: "Aragorn",
-    health: 100,
-    mana: 50,
-    level: 1,
-    // À toi de compléter...
-  };
-
-  // Test dans la console du navigateur
-  console.log(hero);
-
-  return (
-    <div>
-      <h1>Mon héro : {hero.name}</h1>
-      <p>Santé : {hero.health}</p>
-    </div>
-  );
-}
-```
-
-Sauvegarde (`Ctrl+S` ou `Cmd+S`)
-
-Le navigateur se met à jour tout seul. Regarde la console du navigateur (`F12` → onglet "Console")
-
-**C'est ici que tu vas tester ton objet :**
+Crée un fichier `hero.js` (où tu veux, par exemple à côté de tes notes) et écris dedans :
 
 ```javascript
-hero.attack()     // Affiche les dégâts
-hero.heal()       // Restaure la santé
-console.log(hero) // Affiche l'objet entier
+const hero = {
+  name: "Aragorn",
+  health: 100,
+  mana: 50,
+  level: 1,
+  // À toi de compléter : attack(), heal(), levelUp()...
+};
+
+console.log(hero);
 ```
+
+Lance-le dans le terminal :
+
+```bash
+node hero.js
+```
+
+Chaque fois que tu modifies `hero.js`, relance la commande. C'est ici que tu testes ton objet : une fois `attack()` écrite, ajoute `console.log(hero.attack());` en bas du fichier, relance, et regarde le résultat.
 
 ### Phase 2 : ANALYZE — Réponds aux questions
 
-La quête te pose des questions :
+La quête te pose plusieurs questions (voir `quete-1.md`, Phase 2). Par exemple :
 
 > Pourquoi utiliser `this.property` au lieu de `hero.property` ?
 
@@ -421,12 +413,12 @@ La quête te pose des questions :
 
 Parce que... [ta réponse]
 
-## Question 2 : Qu'est-ce que Math.min() fait ?
+## Question 2 : ...
 
 ...
 ```
 
-Garde tes réponses. Tu les revérifieras avec les solutions plus tard.
+Garde tes réponses. Tu les compareras avec les solutions plus tard.
 
 ### Phase 3 : EVALUATE — Compare les approches
 
@@ -443,16 +435,7 @@ function createHero(name) { ... }
 class Hero { ... }
 ```
 
-**Crée une grille :**
-
-```markdown
-| Critère | Approche A | Approche B | Approche C |
-|---------|-----------|-----------|-----------|
-| Répétition de code | Beaucoup | Peu | Peu |
-| Facilité de modification | Faible | Moyenne | Haute |
-| Compréhension (débutant) | Facile | Moyenne | Difficile |
-| Meilleur pour 100 héros ? | ❌ | ⚠️ | ✅ |
-```
+**Remplis la grille de comparaison** de `quete-1.md` (Phase 3) : note toi-même chaque approche, sans chercher la « bonne » réponse. Il n'y en a pas de unique, l'important est de justifier tes notes.
 
 **Quelle approche tu choisirais pour un jeu ?** Argumente.
 
@@ -468,48 +451,7 @@ C'est le vrai test. La quête te dit :
 
 **À toi de décider la structure !**
 
-Voici une approche possible :
-
-```javascript
-// Crée une "factory" qui génère des héros
-function createHero(name, role) {
-  const baseHero = {
-    name,
-    health: 100,
-    mana: 50,
-    level: 1
-  };
-
-  if (role === "warrior") {
-    return {
-      ...baseHero,
-      attack() { return 20; },
-      heal() { this.health = Math.min(100, this.health + 15); }
-    };
-  } else if (role === "mage") {
-    return {
-      ...baseHero,
-      attack() { 
-        this.mana -= 10;
-        return 10; 
-      },
-      heal() { 
-        this.mana -= 15;
-        this.health = Math.min(100, this.health + 25); 
-      }
-    };
-  }
-}
-
-// Teste
-const warrior = createHero("Aragorn", "warrior");
-const mage = createHero("Gandalf", "mage");
-
-warrior.attack();  // 20
-mage.attack();     // 10 (et mana - 10)
-```
-
-**Mais ce n'est qu'une approche !** Toi tu peux en trouver une meilleure.
+Quelques pistes, sans solution toute faite : une fonction qui *fabrique* des héros, et quelque chose qui range ce qui change d'un rôle à l'autre. `quete-1.md` détaille les contraintes à respecter et propose des indices progressifs. Ta solution n'a pas besoin d'être la même que celle du dépôt : plusieurs approches sont valables.
 
 ---
 
@@ -519,29 +461,22 @@ mage.attack();     // 10 (et mana - 10)
 
 Après avoir fait la Quête 1, tu peux vérifier.
 
-### Phase 2 & 3 : Solutions dans le dépôt
-
-```bash
-# Dans le dossier aventuriers que tu as cloné
-cd chapitres/01-royaume-javascript/solutions/
-
-# Ouvre les fichiers
-cat phase2-analyze.md      # Réponses Phase 2
-cat phase3-evaluate.md     # Réponses Phase 3
-```
-
-### Phase 4 : Voir la solution sur une branche spéciale
+Pour ne pas gâcher la quête, les solutions ne sont **pas** sur `main` : elles sont sur une branche dédiée par chapitre, nommée `solutions-chN-phase2` (elle contient les solutions de toutes les phases du chapitre qui en ont une : la Phase 3 est une question d'opinion, elle n'a pas de solution unique).
 
 ```bash
 # Depuis le dossier aventuriers
-git checkout solutions-ch1-phase4
+git fetch origin
+git checkout solutions-ch1-phase2
 
-# Regarde la solution
-cat chapitres/01-royaume-javascript/solutions/phase4-create.js
+# Regarde les solutions
+cat chapitres/01-royaume-javascript/solutions/phase2-analyze.md   # Réponses Phase 2
+cat chapitres/01-royaume-javascript/solutions/phase4-create.js    # Défi Phase 4
 
 # Reviens au code principal
 git checkout main
 ```
+
+> 💡 Si tu as des modifications non enregistrées dans le dépôt, mets-les de côté avant de changer de branche (ou travaille dans un dossier séparé du dépôt, comme conseillé plus haut). **Sans Git :** sur la page GitHub du dépôt, ouvre le menu de branches (en haut à gauche) et choisis `solutions-ch1-phase2`.
 
 **Comment utiliser les solutions :**
 
@@ -555,18 +490,9 @@ git checkout main
 
 # 📝 Test rapide
 
-À la fin du Chapitre 1, il y a un "Test rapide" :
+À la fin de chaque chapitre, un fichier `test-rapide.md` te propose 6 questions à choix multiples, un défi bonus et les solutions (15-20 min). Pour le Chapitre 1, ouvre `chapitres/01-royaume-javascript/test-rapide.md`.
 
-```
-✅ Test rapide du chapitre 1
-
-Question 1 : Crée un objet `player` avec `name` et `health`. 
-Ajoute une méthode `takeDamage(amount)` qui réduit la santé 
-sans passer en dessous de 0.
-
-Question 2 : Pourquoi `const` ne permet pas de réaffecter 
-une variable, mais autorise à modifier un objet ?
-```
+Le barème est sur 120 points : à partir de 90, passe au chapitre suivant ; entre 75 et 89, relis les passages douteux ; en dessous de 75, relis le chapitre.
 
 **Fais ce test** pour savoir si tu as vraiment compris.
 
@@ -577,8 +503,8 @@ une variable, mais autorise à modifier un objet ?
 Une fois que tu as fini le Chapitre 1 ET la Quête 1 :
 
 ```bash
-# Va au Chapitre 2
-cd ../../02-react-vania/
+# Va au Chapitre 2 (depuis chapitres/01-royaume-javascript/)
+cd ../02-react-vania/
 
 # Lis le contenu
 code README.md
@@ -587,7 +513,7 @@ code README.md
 code quete-2.md
 ```
 
-Le Chapitre 2 c'est l'introduction à React. C'est là que tout devient magique.
+Le Chapitre 2, c'est l'introduction à React : tu y utiliseras le projet Vite créé plus haut.
 
 ---
 
@@ -690,22 +616,33 @@ npm run dev
 
 ---
 
-## Problème : "Unexpected token <" en console
+## Problème : une erreur parle de « JSX » ou « Unexpected token < »
 
-**Symptôme :**
+**Symptôme :** Vite affiche une erreur du genre :
 
 ```
-SyntaxError: Unexpected token <
+Unexpected JSX expression
+JSX syntax is disabled and should be enabled via the parser options
 ```
 
 **Solution :**
 
-Tu as probablement une erreur de syntaxe JSX.
+Tu as écrit du JSX (des balises comme `<div>`) dans un fichier `.js`. Renomme-le en `.jsx` et corrige l'`import` correspondant (`./Hero.js` devient `./Hero.jsx`).
 
-Exemple :
+Vérifie aussi que toutes tes balises sont bien fermées (`<img ... />`).
+
+---
+
+## Problème : mon composant n'affiche rien (page vide)
+
+**Symptôme :** pas d'erreur, mais la page reste blanche.
+
+**Solution :**
+
+Regarde si ton `return` est suivi d'un saut de ligne avant le JSX :
 
 ```javascript
-// ❌ FAUX
+// ❌ FAUX : JavaScript termine l'instruction après "return", le JSX est ignoré
 return
   <div>Hello</div>
 
@@ -715,9 +652,7 @@ return (
 )
 ```
 
-Vérifie que :
-- Tous les `<` ont un `>`
-- Tu retournes du JSX avec des parenthèses `(` `)` si sur plusieurs lignes
+Ouvre aussi la console du navigateur (`F12`) : elle indique presque toujours la cause.
 
 ---
 
@@ -734,7 +669,7 @@ bash: git: command not found
 
 Tu peux aussi télécharger le ZIP :
 
-1. Va sur https://github.com/react-vania/aventuriers
+1. Va sur https://github.com/bu7ch/react-vania-chronic_adventures
 2. Clique "Code" → "Download ZIP"
 3. Dézippe le fichier
 4. Ouvre le dossier
@@ -774,14 +709,14 @@ npm install
 
 ### Demande de l'aide
 
-1. **Discord** : Rejoins la communauté
-   - Pose ta question avec : dossier, erreur exacte, ce que tu as essayé
+1. **GitHub Discussions** : pose ta question
+   - Indique : chapitre, erreur exacte, ce que tu as essayé
 
 2. **GitHub Issues** : Crée une issue
    - Template : "Help wanted: [ton problème]"
    - Attache : ton code, ton erreur, ton OS
 
-3. **StackOverflow** : Cherche l'erreur exacte
+3. **Un moteur de recherche** ou StackOverflow : cherche l'erreur exacte
    - Ex : "npm EACCES permission denied"
    - 99% du temps quelqu'un a eu le même souci
 
@@ -796,19 +731,19 @@ Tu as :
 - ✅ Cloné le cours
 - ✅ Fini le Chapitre 1 et la Quête 1
 
-**Tu es maintenant un développeur React qui débute !** 🎮⚔️
+**Tu es prêt à entrer dans React-vania !** 🎮⚔️
 
 ---
 
 # 📚 Prochaines étapes
 
-1. **Chapitre 2** : Comprendre React (2-3h)
-2. **Chapitre 3** : Composants + Listes (3-4h)
-3. **Chapitre 4** : État (2-3h)
-4. **Chapitre 4.5** : La technique derrière (2h)
-5. **Projets** : Construire pour de vrai (5-10h)
+1. **Chapitre 2** : Bienvenue à React-vania (1-2 h de lecture + quête 3-4 h)
+2. **Chapitre 3** : Composants et listes (2 h de lecture + quête 4-5 h)
+3. **Chapitre 4** : L'état *(à venir)*
+4. **Chapitre 4.5** : La forge du réactomancien *(à venir)*
+5. **Projets complets** : construire pour de vrai *(à venir)*
 
-**Rythme :** 1 chapitre par semaine = 6 semaines pour tout.
+**Rythme :** 1 chapitre par semaine environ.
 
 ---
 
@@ -820,16 +755,15 @@ Tu as :
 | **MDN JavaScript** | https://developer.mozilla.org |
 | **Vite Docs** | https://vitejs.dev |
 | **StackBlitz** (tester en ligne) | https://stackblitz.com |
-| **Discord React-vania** | https://discord.gg/YOUR_INVITE |
 
 ---
 
 # 💬 Questions ? Suggestions ?
 
 - **Bug dans le cours ?** → GitHub Issues
-- **Question sur le contenu ?** → Discord
+- **Question sur le contenu ?** → GitHub Discussions
 - **Idée d'amélioration ?** → GitHub Discussions
-- **Veux contribuer ?** → CONTRIBUTE.md
+- **Veux contribuer ?** → [CONTRIBUTE.md](./CONTRIBUTE.md)
 
 ---
 
@@ -837,4 +771,4 @@ Tu as :
 
 *Créé avec ❤️ pour les développeurs qui veulent vraiment comprendre React*
 
-**Last updated :** Mai 2026
+**Last updated :** Novembre 2026

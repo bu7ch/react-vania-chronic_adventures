@@ -17,12 +17,12 @@ x = 10;
 Qu'est-ce qui se passe ?
 
 **A)** `x` vaut 10 (changement réussi)  
-**B)** Erreur : "const cannot be reassigned"  
+**B)** Erreur : « Assignment to constant variable. »  
 **C)** `x` vaut 5 (const l'empêche)
 
 **Réponse :** B ✅
 
-**Explication :** `const` signifie que la variable ne peut pas être réassignée. Si tu essaies, le navigateur lance une erreur.
+**Explication :** `const` signifie que la variable ne peut pas être réassignée. Si tu essaies, JavaScript lance l'erreur « Assignment to constant variable. ».
 
 ---
 
@@ -121,13 +121,13 @@ Qu'affiche-t-elle ?
 
 ## Question 6 (Difficile) : Approche pour 100 héros
 
-Tu dois créer 100 héros différents. Laquelle est la meilleure ?
+Tu dois créer 100 héros différents. Quelle(s) approche(s) est-il raisonnable de choisir ? (une ou plusieurs réponses)
 
 **A)** Copier-coller l'objet 100 fois  
 **B)** Factory function  
 **C)** Classe ES6
 
-**Réponse :** B ou C ✅
+**Réponse :** B et C ✅ (A est à éviter)
 
 **Explication :** 
 - A = cauchemar de maintenance
@@ -176,11 +176,11 @@ mage.heal();       // +25, mana -15
 - **Question 6 :** 25 pts (réflexion)
 - **Défi bonus :** 30 pts (complet)
 
-**Total :** 130 pts
+**Total :** 120 pts
 
-- ✅ 100+ : Tu as compris ! Vas au Ch 2
-- ⚠️ 80-100 : Bien, mais relire certaines sections
-- ❌ < 80 : Relire tout le chapitre
+- ✅ 90+ : Tu as compris ! Vas au Ch 2
+- ⚠️ 75-89 : Bien, mais relire certaines sections
+- ❌ < 75 : Relire tout le chapitre
 
 ---
 
@@ -201,8 +201,8 @@ mage.heal();       // +25, mana -15
 ### Q5 : B
 Destructuring extrait "Aragorn"
 
-### Q6 : B ou C
-Factory (B) pour simplicity, Classes (C) pour production
+### Q6 : B et C (pas A)
+Factory (B) pour la simplicité, classes (C) pour une base de code plus grande. Les deux se défendent : l'important est d'argumenter ton choix.
 
 ### Défi bonus
 Voir `solutions/phase4-create.js` sur la branche `solutions-ch1-phase2`
