@@ -739,7 +739,7 @@ Tu as :
 
 1. **Chapitre 2** : Bienvenue à React-vania (1-2 h de lecture + quête 3-4 h)
 2. **Chapitre 3** : Composants et listes (2 h de lecture + quête 4-5 h)
-3. **Chapitre 4** : L'état *(à venir)*
+3. **Chapitre 4** : L'état (2 h de lecture + quête 4-5 h)
 4. **Chapitre 4.5** : La forge du réactomancien *(à venir)*
 5. **Projets complets** : construire pour de vrai *(à venir)*
 

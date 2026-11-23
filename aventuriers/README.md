@@ -9,7 +9,7 @@ Bienvenue dans React-vania Chronicle Adventures ! Ce n'est pas un manuel techniq
 
 **Langue :** Français | **Dernière mise à jour :** Novembre 2026
 
-> 🚧 **État du cours :** les chapitres 1, 2 et 3 sont disponibles. Les chapitres 4 et 4.5 sont en cours d'écriture ; le reste est à venir (voir la [feuille de route](./ROADMAP.md)).
+> 🚧 **État du cours :** les chapitres 1 à 4 sont disponibles. Le chapitre 4.5 est en cours d'écriture ; le reste est à venir (voir la [feuille de route](./ROADMAP.md)).
 
 ---
 
@@ -126,7 +126,7 @@ aventuriers/
 │   │   ├── quete-2.md
 │   │   ├── code-demo/
 │   │   │   ├── App.jsx             ← Exemple complet
-│   │   │   └── index.css           ← Style du cours
+│   │   │   └── index.css           ← Thème du cours (« console arcanique »)
 │   │   └── test-rapide.md
 │   │
 │   ├── 03-composants-listes/
@@ -137,13 +137,11 @@ aventuriers/
 │   │   │   └── item-list/          ← App, Panel, ItemRow
 │   │   └── test-rapide.md
 │   │
-│   ├── 04-etat/                    (à venir)
+│   ├── 04-etat/
 │   │   ├── README.md
 │   │   ├── quete-4.md
-│   │   ├── ateliers-comparatifs/
-│   │   │   ├── useState-vs-multiple.md
-│   │   │   └── grille-evaluation.csv
-│   │   ├── solutions/
+│   │   ├── projets-exemples/
+│   │   │   └── tavern-vivante/     ← App, HeroGallery, HeroCard, AddHeroForm, App.css
 │   │   └── test-rapide.md
 │   │
 │   └── 04-5-forge-reactomancien/   (à venir)
@@ -304,7 +302,7 @@ code .
 Semaine 1 : Chapitre 1 (JavaScript) + Mini-exos
 Semaine 2 : Chapitre 2 (React setup)
 Semaine 3 : Chapitre 3 (Composants)
-Semaine 4 : Chapitre 4 (État) + Chapitre 4.5 (Forge)        (à venir)
+Semaine 4 : Chapitre 4 (État) + Chapitre 4.5 (Forge, à venir)
 Semaine 5 : Projets pratiques                               (à venir)
 Semaine 6-7 : Projet final : construire un jeu              (à venir)
 ```
@@ -420,8 +418,8 @@ Ton nom sera dans les crédits ! 🙌
 ## 📊 Progression du projet
 
 ```
-✅ Chapitres 1, 2, 3 : écrits (README, quête, test rapide, exemples)
-🔄 Chapitre 4 (état) puis 4.5 (forge) : en cours d'écriture
+✅ Chapitres 1, 2, 3, 4 : écrits (README, quête, test rapide, exemples)
+🔄 Chapitre 4.5 (forge) : en cours d'écriture
 🔜 Chapitres 5-6 (patterns, useEffect) : à venir
 🔜 Projets complets, bonus, ressources : à venir
 ```

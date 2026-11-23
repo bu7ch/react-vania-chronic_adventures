@@ -99,7 +99,7 @@ Sauvegarde. La page change instantanément : c'est ton premier composant en marc
 Deux petites retouches pour partir sur de bonnes bases :
 
 1. Ton nouveau `App.jsx` n'importe plus `App.css` (l'ancien le faisait). Tu peux donc supprimer le fichier `src/App.css` et le dossier `src/assets/`, qui ne servent plus.
-2. Remplace le contenu de `src/index.css` par [`code-demo/index.css`](./code-demo/index.css). C'est la feuille de style du cours : fond sombre, cartes, barre de vie. Tu n'as rien à y comprendre.
+2. Remplace le contenu de `src/index.css` par [`code-demo/index.css`](./code-demo/index.css). C'est le thème du cours, « La console arcanique » : fond encre, panneaux ardoise, titres dorés, santé en cellules lumineuses, boutons et champs déjà habillés. Il charge deux polices depuis Google Fonts (il faut donc Internet). Tu n'as rien à y comprendre.
 
 ---
 

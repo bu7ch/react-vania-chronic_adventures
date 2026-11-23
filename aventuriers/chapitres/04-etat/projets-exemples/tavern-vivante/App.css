@@ -1,0 +1,58 @@
+/* 🎨 Style de la Taverne vivante (à ajouter À CÔTÉ de src/index.css du Chapitre 2).
+   Rien à comprendre ici : la grille, la rangée de boutons, le formulaire.
+   Les boutons et les champs sont déjà habillés par index.css. */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  gap: 1.25rem;
+}
+
+.gallery .card {
+  margin: 0;
+}
+
+/* Le bouton « Réinitialiser » respire sous la galerie */
+.gallery + button {
+  margin-top: 1.75rem;
+}
+
+.hero-card h2 {
+  margin: 0;
+}
+
+.hero-card .subtitle {
+  margin: 0 0 0.75rem;
+}
+
+/* Les boutons d'action se partagent la ligne, ou passent à la ligne en s'étirant */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.actions button {
+  flex: 1 1 auto;
+}
+
+.add-hero-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.add-hero-form input {
+  flex: 1 1 12rem;
+}
+
+/* Au survol ou au clavier, la carte active s'éclaire (filet or) et les autres reculent */
+.hero-card:hover,
+.hero-card:focus-within {
+  --edge: var(--gold);
+}
+
+.gallery:has(.hero-card:hover, .hero-card:focus-within) .hero-card:not(:hover):not(:focus-within) {
+  opacity: 0.7;
+}

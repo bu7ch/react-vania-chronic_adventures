@@ -337,7 +337,7 @@ Le code complet est dans [`projets-exemples/hero-gallery/`](./projets-exemples/h
 | [`App.jsx`](./projets-exemples/hero-gallery/App.jsx) | Les données (3 héros) et la mise en page |
 | [`HeroGallery.jsx`](./projets-exemples/hero-gallery/HeroGallery.jsx) | Le `.map()`, la `key`, le cas « liste vide » |
 | [`HeroCard.jsx`](./projets-exemples/hero-gallery/HeroCard.jsx) | La carte (props, valeur par défaut, `StatBar`) |
-| [`App.css`](./projets-exemples/hero-gallery/App.css) | Le style de la grille |
+| [`App.css`](./projets-exemples/hero-gallery/App.css) | Le style de la grille, et de la carte éclairée au survol |
 
 Pour l'essayer, garde le `src/index.css` du Chapitre 2 et copie les quatre fichiers dans `src/`.
 
@@ -380,4 +380,4 @@ Une confusion fréquente à lever : **`props` et « état » sont deux choses di
 
 Tes composants sont réutilisables et tes listes sont dynamiques. Mais la page reste **figée** : si le héros prend un coup, rien ne change à l'écran. Au **Chapitre 4**, tu donnes une mémoire à tes composants avec `useState`, et ta taverne devient vivante : barres de santé qui bougent, boutons qui réagissent.
 
-👉 Chapitre 4 : L'État, ta barre de santé *(à venir)*
+👉 [Chapitre 4 : L'État, ta barre de santé](../04-etat/README.md)

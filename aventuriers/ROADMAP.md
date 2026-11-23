@@ -13,12 +13,12 @@ Ce document dit **où en est le cours** et **ce qui vient ensuite**. Il ne conti
 | **Ch 1 : Le Royaume de JavaScript** | Variables, fonctions, objets, destructuring, template literals, conditions, `this` | README, quête, test rapide, 4 mini-exos |
 | **Ch 2 : Bienvenue à React-vania** | Projet Vite, premier composant, JSX, composition | README, quête, test rapide, démo |
 | **Ch 3 : Les Composants et les Listes** | Props, `children`, `.map()`, `key`, filtre et tri | README, quête, test rapide, 2 projets d'exemple |
+| **Ch 4 : L'État, ta barre de santé** | `useState`, événements, formulaires contrôlés, immutabilité, remonter l'état | README, quête, test rapide, projet d'exemple |
 
 Les solutions du Chapitre 1 sont sur la branche `solutions-ch1-phase2`.
 
 ## 🔄 En cours
 
-- **Ch 4 : L'État, ta barre de santé** : `useState`, gestionnaires d'événements, plusieurs états. Il répond aux défis laissés ouverts à la fin des quêtes 2 et 3.
 - **Ch 4.5 : La forge du réactomancien** : DOM virtuel, regroupement des mises à jour (*batching*), clés, règles des hooks.
 
 ## 🔜 Prévu (dans cet ordre)
