@@ -20,10 +20,6 @@ Qu'est-ce qui se passe ?
 **B)** Erreur : « Assignment to constant variable. »  
 **C)** `x` vaut 5 (const l'empêche)
 
-**Réponse :** B ✅
-
-**Explication :** `const` signifie que la variable ne peut pas être réassignée. Si tu essaies, JavaScript lance l'erreur « Assignment to constant variable. ».
-
 ---
 
 ## Question 2 (Facile) : Appeler une fonction
@@ -42,12 +38,6 @@ Quelle est la différence entre `damage` et `damage2` ?
 **A)** Aucune, c'est pareil  
 **B)** `damage` est la fonction, `damage2` est le résultat (20)  
 **C)** `damage2` est une erreur
-
-**Réponse :** B ✅
-
-**Explication :**  
-- `attack` (sans `()`) = la fonction elle-même
-- `attack()` (avec `()`) = l'exécution de la fonction = 20
 
 ---
 
@@ -73,10 +63,6 @@ Qu'affiche `console.log(hero.health)` ?
 **B)** 50  
 **C)** 30
 
-**Réponse :** B ✅
-
-**Explication :** 100 - 20 - 30 = 50
-
 ---
 
 ## Question 4 (Moyen) : Math.min()
@@ -92,10 +78,6 @@ Qu'affiche-t-elle ?
 **A)** 120  
 **B)** 100  
 **C)** 20
-
-**Réponse :** B ✅
-
-**Explication :** `Math.min(100, 120)` retourne le plus petit, donc 100. C'est un plafonnement.
 
 ---
 
@@ -113,10 +95,6 @@ Qu'affiche-t-elle ?
 **B)** `"Aragorn"`  
 **C)** Erreur
 
-**Réponse :** B ✅
-
-**Explication :** Le destructuring extrait les propriétés. `name` vaut "Aragorn".
-
 ---
 
 ## Question 6 (Difficile) : Approche pour 100 héros
@@ -126,16 +104,6 @@ Tu dois créer 100 héros différents. Quelle(s) approche(s) est-il raisonnable 
 **A)** Copier-coller l'objet 100 fois  
 **B)** Factory function  
 **C)** Classe ES6
-
-**Réponse :** B et C ✅ (A est à éviter)
-
-**Explication :** 
-- A = cauchemar de maintenance
-- B = flexible et simple
-- C = un peu plus complexe mais très organisé
-
-Pour un débutant : B  
-Pour un projet production : C
 
 ---
 
@@ -186,25 +154,5 @@ mage.heal();       // +25, mana -15
 
 ## Solutions
 
-### Q1 : B
-`const` ne peut pas être réassignée.
+Pour que le test reste un vrai test, les solutions ne sont pas sur `main`. Une fois que tu as répondu, consulte `chapitres/01-royaume-javascript/solutions/test-rapide-solutions.md` sur la branche `solutions-ch1-phase2` (voir [Vérifier tes réponses](../../GETTING_STARTED.md#-vérifier-tes-réponses) pour y accéder).
 
-### Q2 : B
-`attack` = la fonction, `attack()` = 20
-
-### Q3 : B
-100 - 20 - 30 = 50
-
-### Q4 : B
-`Math.min(100, 120)` = 100
-
-### Q5 : B
-Destructuring extrait "Aragorn"
-
-### Q6 : B et C (pas A)
-Factory (B) pour la simplicité, classes (C) pour une base de code plus grande. Les deux se défendent : l'important est d'argumenter ton choix.
-
-### Défi bonus
-Voir `solutions/phase4-create.js` sur la branche `solutions-ch1-phase2`
-
----

@@ -461,7 +461,7 @@ Quelques pistes, sans solution toute faite : une fonction qui *fabrique* des hé
 
 Après avoir fait la Quête 1, tu peux vérifier.
 
-Pour ne pas gâcher la quête, les solutions ne sont **pas** sur `main` : elles sont sur une branche dédiée par chapitre, nommée `solutions-chN-phase2` (elle contient les solutions de toutes les phases du chapitre qui en ont une : la Phase 3 est une question d'opinion, elle n'a pas de solution unique).
+Pour ne pas gâcher la quête, les solutions ne sont **pas** sur `main` : elles sont sur une branche dédiée par chapitre, nommée `solutions-chN-phase2` (elle contient les solutions du test rapide et celles des phases du chapitre qui en ont une : la Phase 3 est une question d'opinion, elle n'a pas de solution unique ; pour l'instant, les phases 2 et 4 ne sont corrigées que pour le Chapitre 1).
 
 ```bash
 # Depuis le dossier aventuriers
@@ -471,6 +471,7 @@ git checkout solutions-ch1-phase2
 # Regarde les solutions
 cat chapitres/01-royaume-javascript/solutions/phase2-analyze.md   # Réponses Phase 2
 cat chapitres/01-royaume-javascript/solutions/phase4-create.js    # Défi Phase 4
+cat chapitres/01-royaume-javascript/solutions/test-rapide-solutions.md   # Corrigé du test rapide
 
 # Reviens au code principal
 git checkout main
@@ -490,7 +491,7 @@ git checkout main
 
 # 📝 Test rapide
 
-À la fin de chaque chapitre, un fichier `test-rapide.md` te propose 6 questions à choix multiples, un défi bonus et les solutions (15-20 min). Pour le Chapitre 1, ouvre `chapitres/01-royaume-javascript/test-rapide.md`.
+À la fin de chaque chapitre, un fichier `test-rapide.md` te propose 6 questions à choix multiples et un défi bonus (15-20 min). Le corrigé n'est pas sur `main` : il est sur la branche de solutions du chapitre (voir « Vérifier tes réponses »). Pour le Chapitre 1, ouvre `chapitres/01-royaume-javascript/test-rapide.md`.
 
 Le barème est sur 120 points : à partir de 90, passe au chapitre suivant ; entre 75 et 89, relis les passages douteux ; en dessous de 75, relis le chapitre.
 

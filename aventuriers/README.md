@@ -145,7 +145,7 @@ aventuriers/
 │   │   └── test-rapide.md
 │   │
 │   └── 04-5-forge-reactomancien/
-│       ├── README.md               ← Le cours (réponses aux exos incluses)
+│       ├── README.md               ← Le cours
 │       ├── demos/
 │       │   └── mini-react.js       ← Forge ton useState (node)
 │       ├── mini-exos/              ← 6 exos à prédire puis lancer
@@ -244,13 +244,14 @@ aventuriers/
 
 ```
 main/                           ← Code principal (ce que tu lis)
-├── solutions-ch1-phase2        ← Solutions du Ch 1 (phases 2 et 4)
-├── solutions-ch2-phase2        ← à venir
-├── solutions-ch3-phase2        ← à venir
-└── solutions-ch4-phase2        ← à venir
+├── solutions-ch1-phase2        ← Ch 1 : phases 2 et 4 + solutions du test rapide
+├── solutions-ch2-phase2        ← Ch 2 : solutions du test rapide (phases 2 et 4 à venir)
+├── solutions-ch3-phase2        ← Ch 3 : idem
+├── solutions-ch4-phase2        ← Ch 4 : idem
+└── solutions-ch45-mini-exos    ← Ch 4.5 : réponses aux mini-exos + solutions du test rapide
 ```
 
-La convention : **une branche de solutions par chapitre**, nommée `solutions-chN-phase2`. Elle regroupe les solutions de toutes les phases du chapitre qui en ont une (les Phases 2 et 4). La Phase 3 (Evaluate) n'a pas de « bonne » réponse unique.
+La convention : **une branche de solutions par chapitre**, nommée `solutions-chN-phase2` (pour le Chapitre 4.5, qui n'a pas de quête : `solutions-ch45-mini-exos`). Chaque branche ajoute un dossier `solutions/` au chapitre concerné, par exemple `chapitres/04-etat/solutions/test-rapide-solutions.md`. Elle regroupe les solutions du **test rapide** et celles des phases 2 et 4 de la quête (la Phase 3 n'a pas de « bonne » réponse unique). Pour l'instant, les phases 2 et 4 ne sont corrigées que pour le Chapitre 1.
 
 **Comment utiliser :**
 
@@ -367,7 +368,7 @@ Astuce : fais un `git commit` à la fin de chaque quête (ou copie ton projet) p
 - Phase 2 (Analyze) : Réponses sur la branche solutions-chN-phase2
 - Phase 3 (Evaluate) : Aucune "bonne" réponse, c'est une opinion
 - Phase 4 (Create libre) : Vérifie sur la même branche, il y a des variantes
-- Test rapide : Auto-évaluation à la fin du chapitre
+- Test rapide : barème dans le test, corrigé sur la branche de solutions du chapitre
 ```
 
 ### **"Puis-je contribuer ?"**

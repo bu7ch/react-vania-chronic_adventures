@@ -145,6 +145,8 @@ Ton code JavaScript. (Optionnel : partage-le dans une issue ou un gist GitHub si
 
 ## Phase 2 : ANALYZE (Analyser) — 30-45 min
 
+> ✍️ Réponds par écrit. Les réponses sont sur la branche `solutions-ch1-phase2` (fichier `chapitres/01-royaume-javascript/solutions/phase2-analyze.md`), à consulter **après** avoir essayé.
+
 ### Q1 : Pourquoi utiliser `this.property` au lieu de `hero.property` ?
 
 **Contexte :** Tu dois écrire une méthode qui modifie une propriété de l'objet.
@@ -182,10 +184,6 @@ mage.attack();     // Quel nom s'affiche ? Pourquoi ?
 3. Qu'arrive-t-il à l'option B si tu renommes la variable `hero2` en `player2` ?
 4. Pourquoi `this` est-il plus souple ?
 
-**Réponse attendue :** dans une méthode appelée sous la forme `objet.methode()`, `this` désigne l'objet à gauche du point. L'option A marche donc pour n'importe quel objet qui possède la méthode (`warrior.attack()` affiche « Boromir »). L'option B écrit en dur le nom `hero2` : elle affiche toujours « Elsa » et casse si on renomme la variable.
-
-**À retenir :** `this` dépend de **la façon dont on appelle** la méthode, pas de l'endroit où elle est écrite. C'est pourquoi `const f = hero.attackWithThis; f();` ne marche plus (plus d'objet à gauche du point), et pourquoi on n'écrit pas une méthode d'objet en arrow function.
-
 ---
 
 ### Q2 : Qu'est-ce que `Math.min()` et `Math.max()` font réellement ?
@@ -215,8 +213,6 @@ for (let i = 0; i < 5; i++) {
 1. Qu'observe-tu dans le Scénario 1 ? La santé peut-elle dépasser 100 ?
 2. Et dans le Scénario 2 ?
 3. À quoi sert `Math.max()` ?
-
-**Réponse attendue :** `Math.min(100, x)` retourne le plus petit entre 100 et x. Ça plafonne la valeur. `Math.max(0, x)` le fait pour le minimum.
 
 ---
 
@@ -253,8 +249,6 @@ console.log(`Dégâts : ${dmg}`);  // L'appelant affiche
 1. Laquelle est plus flexible ?
 2. Si tu veux changer le format du message, quelle approche est plus facile à modifier ?
 3. Quand afficher dans la fonction est mieux ? Quand retourner est mieux ?
-
-**Réponse attendue :** Retourner c'est plus flexible. Afficher c'est plus commode au départ.
 
 ---
 

@@ -783,8 +783,9 @@ solutions/                      (kebab-case)
 
 ```
 main                            (code stable)
-solutions-ch1-phase2            (solutions des phases 2 et 4 du Ch 1)
-solutions-ch2-phase2            (idem pour le Ch 2, à venir)
+solutions-ch1-phase2            (phases 2 et 4 du Ch 1 + test rapide)
+solutions-ch2-phase2            (test rapide du Ch 2 ; idem Ch 3 et Ch 4)
+solutions-ch45-mini-exos        (mini-exos et test rapide du Ch 4.5)
 
 feat/new-chapter-5              (nouvelles features)
 fix/typo-ch1                    (corrections)

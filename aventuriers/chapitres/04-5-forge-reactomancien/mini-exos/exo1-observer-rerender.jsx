@@ -6,7 +6,8 @@ import { useState } from "react";
 // Mode d'emploi :
 //   1. Affiche <Exo1 /> dans ton App et ouvre la console (F12).
 //   2. AVANT de cliquer, note sur papier ce que tu t'attends à voir pour chaque bouton.
-//   3. Clique, compare, puis lis la réponse dans le README du chapitre.
+//   3. Clique, compare, puis consulte les réponses (voir « Réponses aux mini-exos » dans
+//      le README du chapitre).
 //
 // Questions :
 //   (a) Tu cliques sur « Parent ». Quels composants sont rappelés ?

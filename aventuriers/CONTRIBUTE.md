@@ -23,7 +23,7 @@ Merci de vouloir améliorer le cours ! Les contributions sont les bienvenues, pe
 - **Structure d'un chapitre :** `README.md` (contenu), `quete-N.md` (4 phases : CREATE, ANALYZE, EVALUATE, CREATE libre), `test-rapide.md`, puis exos et démos. Voir [STRUCTURE.md](./STRUCTURE.md).
 - **Ordre pédagogique :** n'utilise pas dans un chapitre une notion qui n'a pas été enseignée avant. Si tu dois le faire, explique-la sur place en une phrase.
 - **Le code doit fonctionner.** Teste chaque extrait que tu ajoutes (avec `node` pour le JavaScript, dans un projet Vite pour le React) **avant** de proposer la PR. Un exemple cassé est pire que pas d'exemple.
-- **Solutions :** elles ne vont pas sur `main` mais sur la branche `solutions-chN-phase2` du chapitre concerné.
+- **Solutions :** elles ne vont pas sur `main` mais sur la branche `solutions-chN-phase2` du chapitre concerné (`solutions-ch45-mini-exos` pour le 4.5). Cela vaut aussi pour le corrigé des tests rapides et les réponses des mini-exos.
 - **Commits :** messages explicites, en anglais ou en français, par exemple `fix(ch2): correct the JSX rule about class`.
 
 ## Réutiliser le contenu

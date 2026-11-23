@@ -14,13 +14,13 @@ Ce document dit **où en est le cours** et **ce qui vient ensuite**. Il ne conti
 | **Ch 2 : Bienvenue à React-vania** | Projet Vite, premier composant, JSX, composition | README, quête, test rapide, démo |
 | **Ch 3 : Les Composants et les Listes** | Props, `children`, `.map()`, `key`, filtre et tri | README, quête, test rapide, 2 projets d'exemple |
 | **Ch 4 : L'État, ta barre de santé** | `useState`, événements, formulaires contrôlés, immutabilité, remonter l'état | README, quête, test rapide, projet d'exemple |
-| **Ch 4.5 : La forge du réactomancien** | DOM virtuel, regroupement des mises à jour, clés, ordre des hooks, `useReducer` | README (réponses incluses), 6 mini-exos, 2 ateliers, test rapide |
+| **Ch 4.5 : La forge du réactomancien** | DOM virtuel, regroupement des mises à jour, clés, ordre des hooks, `useReducer` | README, 6 mini-exos, 2 ateliers, test rapide |
 
-Les solutions du Chapitre 1 sont sur la branche `solutions-ch1-phase2`.
+Les solutions ne sont pas sur `main` : chaque chapitre a sa branche de solutions (`solutions-chN-phase2`, et `solutions-ch45-mini-exos` pour le 4.5). Elles contiennent les corrigés des tests rapides, des mini-exos du 4.5 et des phases 2 et 4 du Chapitre 1.
 
 ## 🔜 Prévu (dans cet ordre)
 
-1. Branches de solutions pour les chapitres 2, 3 et 4 (`solutions-chN-phase2`).
+1. Solutions des phases 2 et 4 des quêtes 2, 3 et 4, sur leurs branches de solutions.
 2. **Ch 5 : Patterns de composants avancés.**
 3. **Ch 6 : `useEffect` et effets de bord.**
 4. **Ch 7+ : construire un jeu RPG complet** (projets complets : galerie de héros, système de quêtes, simulateur de combat).
