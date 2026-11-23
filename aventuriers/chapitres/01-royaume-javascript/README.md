@@ -79,3 +79,64 @@ const health = player.health;
 // Court (destructuring) :
 const { name, health } = player;
 ```
+
+## Pourquoi ces 4 outils reviennent sans arrêt en React
+
+Tu te demandes peut-être pourquoi on passe un chapitre entier sur du JavaScript « de base ». Parce que **chaque ligne de React que tu vas écrire utilise ces outils** :
+
+| Outil JavaScript | Où tu le retrouveras en React |
+|------------------|-------------------------------|
+| `const` | Chaque composant est une `const` (ou une fonction) que tu ne réassignes jamais |
+| Fonctions | Un composant React **est** une fonction : elle reçoit des données, elle renvoie de l'interface |
+| Arrow functions | Les gestionnaires de clic (`onClick={() => ...}`) et les callbacks de `.map()` |
+| Objets | Les `props` d'un composant sont un objet ; l'état d'un personnage aussi |
+| Destructuring | `function HeroCard({ name, health })` : tu déplies les props directement dans la signature |
+
+Un petit aperçu pour te donner envie (tu n'as pas besoin de le comprendre maintenant) :
+
+```javascript
+// Un composant React, c'est ça : une fonction qui reçoit un objet.
+const HeroCard = ({ name, health }) => `${name} : ${health} PV`;
+
+HeroCard({ name: "Aragorn", health: 100 }); // "Aragorn : 100 PV"
+```
+
+Fonction + arrow function + objet + destructuring, en deux lignes. Au Chapitre 2, on remplacera juste la chaîne de caractères par du JSX. Rien de plus.
+
+## 🧠 Encadré « Sans métaphore »
+
+Le vocabulaire RPG est là pour t'aider à retenir, pas pour te cacher les vrais termes. Voici la traduction :
+
+- **Inventaire** = une *variable* (`const`, `let`) : un nom attaché à une valeur.
+- **Sort magique** = une *fonction* : un bloc de code que tu nommes et que tu peux appeler autant de fois que tu veux.
+- **Fiche de personnage** = un *objet* : un ensemble de paires `clé: valeur`.
+- **Déplier ses affaires** = le *destructuring* : extraire plusieurs propriétés d'un objet en une seule instruction.
+
+Deux pièges à connaître dès maintenant :
+
+1. **`const` ne rend pas un objet immuable.** `const player = { health: 100 }; player.health = 50;` fonctionne. `const` interdit seulement de **réassigner** le nom (`player = {...}`). C'est un point qui compte beaucoup en React : on ne modifie jamais un objet d'état directement, on en crée un nouveau.
+2. **`fonction` et `fonction()` sont deux choses différentes.** `castFireball` désigne le sort lui-même, `castFireball(25)` le lance. Tu passeras souvent la première forme à React (`onClick={castFireball}`), presque jamais la seconde.
+
+## Résumé du chapitre
+
+- `const` par défaut, `let` si tu dois réassigner, `var` jamais.
+- Une fonction est un bloc réutilisable ; l'arrow function `(x) => x * 2` en est la forme courte.
+- `return` renvoie une valeur à celui qui appelle ; `console.log` ne fait qu'afficher.
+- Un objet regroupe des données (et des méthodes) liées ; on y accède avec `objet.cle`.
+- Le destructuring `const { a, b } = objet` extrait des propriétés en une ligne.
+
+## Ton plan d'attaque
+
+1. **Lis ce chapitre** en entier (15 min).
+2. **Lance les mini-exos** dans `mini-exos/` avec Node : `node exo-variables.js` (5-10 min chacun).
+   Le dernier, `exo-destructuring.js`, est un exercice à compléter : lis les consignes en commentaire.
+3. **Fais la Quête 1** dans [`quete-1.md`](./quete-1.md) (2-3 h, 4 phases).
+4. **Passe le [test rapide](./test-rapide.md)** pour vérifier que tout est acquis.
+
+Besoin de comparer avec une solution ? Elles sont sur la branche `solutions-ch1-phase2` (voir le [README principal](../../README.md#-les-branches-du-dépôt)). Essaie d'abord, compare ensuite.
+
+## Prochaines étapes
+
+Tu maîtrises le royaume. Il est temps de franchir ses portes : au **Chapitre 2**, tu installes Vite et tu écris ton premier composant React.
+
+👉 [Chapitre 2 : Bienvenue à React-vania](../02-react-vania/README.md)

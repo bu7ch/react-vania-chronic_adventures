@@ -205,6 +205,6 @@ Destructuring extrait "Aragorn"
 Factory (B) pour simplicity, Classes (C) pour production
 
 ### Défi bonus
-Voir `solutions/phase4-create.js`
+Voir `solutions/phase4-create.js` sur la branche `solutions-ch1-phase2`
 
 ---

@@ -235,7 +235,7 @@ npm run dev
 Tu verras :
 
 ```
-  VITE v4.5.0  ready in 123 ms
+  VITE v8.x.x  ready in 123 ms
 
   ➜  Local:   http://localhost:5173/
   ➜  press h to show help
@@ -249,10 +249,11 @@ Tu devrais voir une page React basique :
 
 ```
 ┌─────────────────────────────────────┐
-│  ⚛️  React + Vite                    │
+│  Get started                       │
+│  Edit src/App.jsx and save to      │
+│  test HMR                          │
 │                                    │
-│  [Count: 0]                        │
-│  [Edit src/App.jsx and save]       │
+│  [ Count is 0 ]                    │
 │                                    │
 └─────────────────────────────────────┘
 ```

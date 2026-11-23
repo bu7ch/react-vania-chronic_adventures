@@ -262,6 +262,8 @@ chapitres/
     └── explications.md
 ```
 
+> **ℹ️ Où sont les solutions ?** Pour ne pas gâcher la quête, les dossiers `solutions/` ne sont **pas** sur `main` : ils vivent sur des branches dédiées (`solutions-ch1-phase2`, etc. — voir le [README](./README.md#-les-branches-du-dépôt)). L'arborescence ci-dessus montre le contenu de ces branches. Sur `main`, tu ne trouves que l'énoncé.
+
 ### Détail : le fichier `README.md`
 
 **C'est le contenu principal du chapitre**

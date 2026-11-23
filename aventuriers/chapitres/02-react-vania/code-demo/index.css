@@ -1,0 +1,74 @@
+/* 🎨 Feuille de style du cours (Chapitre 2)
+   Copie ce fichier à la place de src/index.css : il remplace le style du template Vite.
+   Tu n'as RIEN à comprendre ici, c'est juste pour que la taverne soit jolie. */
+
+:root {
+  color-scheme: dark;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #1b1a2e;
+  color: #ece6d6;
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  width: min(560px, 100%);
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #f3c969;
+  margin: 0 0 0.5rem;
+}
+
+.subtitle {
+  margin: 0 0 1.5rem;
+  color: #a9a4c4;
+}
+
+.card {
+  background: #26243f;
+  border: 2px solid #4a4675;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.card ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.bar {
+  height: 14px;
+  background: #3a3760;
+  border-radius: 7px;
+  overflow: hidden;
+  margin: 0.5rem 0;
+}
+
+.bar-fill {
+  height: 100%;
+  background: #6fcf97;
+}
+
+.warning {
+  color: #ff8a80;
+  font-weight: 600;
+}
+
+footer {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: #a9a4c4;
+  text-align: center;
+}
