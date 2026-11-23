@@ -7,6 +7,45 @@
 
 console.log("=== APPROCHE 1 : Factory + Spread ===\n");
 
+// Les rôles sont rangés dans un objet partagé : ajouter un rôle = ajouter une entrée ici.
+const roles = {
+  warrior: {
+    attack: function() {
+      const damage = 20;
+      console.log(`⚔️ ${this.name} (guerrier) attaque pour ${damage} dégâts !`);
+      return damage;
+    },
+    heal: function() {
+      const healed = Math.min(15, 100 - this.health);
+      this.health += healed;
+      console.log(`🛡️ ${this.name} se soigne de ${healed} PV. Santé : ${this.health}/100`);
+    }
+  },
+
+  mage: {
+    attack: function() {
+      if (this.mana < 10) {
+        console.log(`❌ ${this.name} (mage) n'a pas assez de mana !`);
+        return 0;
+      }
+      const damage = 10;
+      this.mana -= 10;
+      console.log(`🔥 ${this.name} (mage) lance un sort pour ${damage} dégâts ! Mana : ${this.mana}`);
+      return damage;
+    },
+    heal: function() {
+      if (this.mana < 15) {
+        console.log(`❌ ${this.name} (mage) n'a pas assez de mana pour se soigner !`);
+        return;
+      }
+      const healed = Math.min(25, 100 - this.health);
+      this.health += healed;
+      this.mana -= 15;
+      console.log(`✨ ${this.name} (mage) se soigne de ${healed} PV (coûte 15 mana). Santé : ${this.health}, Mana : ${this.mana}`);
+    }
+  }
+};
+
 function createHero(name, role) {
   const baseHero = {
     name,
@@ -22,44 +61,6 @@ function createHero(name, role) {
       this.health = 100;
       this.mana += 25;
       console.log(`${this.name} atteint le niveau ${this.level} !`);
-    }
-  };
-
-  const roles = {
-    warrior: {
-      attack: function() {
-        const damage = 20;
-        console.log(`⚔️ ${this.name} (guerrier) attaque pour ${damage} dégâts !`);
-        return damage;
-      },
-      heal: function() {
-        const healed = Math.min(15, 100 - this.health);
-        this.health += healed;
-        console.log(`🛡️ ${this.name} se soigne de ${healed} PV. Santé : ${this.health}/100`);
-      }
-    },
-
-    mage: {
-      attack: function() {
-        if (this.mana < 10) {
-          console.log(`❌ ${this.name} (mage) n'a pas assez de mana !`);
-          return 0;
-        }
-        const damage = 10;
-        this.mana -= 10;
-        console.log(`🔥 ${this.name} (mage) lance un sort pour ${damage} dégâts ! Mana : ${this.mana}`);
-        return damage;
-      },
-      heal: function() {
-        if (this.mana < 15) {
-          console.log(`❌ ${this.name} (mage) n'a pas assez de mana pour se soigner !`);
-          return;
-        }
-        const healed = Math.min(25, 100 - this.health);
-        this.health += healed;
-        this.mana -= 15;
-        console.log(`✨ ${this.name} (mage) se soigne de ${healed} PV (coûte 15 mana). Santé : ${this.health}, Mana : ${this.mana}`);
-      }
     }
   };
 
@@ -230,27 +231,24 @@ mage3.heal();       // Soigne du mage
 
 console.log("\n\n=== BONUS : Ajouter un Voleur ===\n");
 
-// Avec l'Approche 1, c'est facile :
-const roles = {
-  // ...warrior...
-  // ...mage...
-  rogue: {
-    attack: function() {
-      const damage = 15;  // Entre guerrier et mage
-      const isCrit = Math.random() > 0.7;  // 30% critique
-      if (isCrit) {
-        console.log(`⚡ CRITIQUE ! ${this.name} (voleur) attaque pour ${damage * 2} dégâts !`);
-        return damage * 2;
-      } else {
-        console.log(`🗡️ ${this.name} (voleur) attaque pour ${damage} dégâts !`);
-        return damage;
-      }
-    },
-    heal: function() {
-      const healed = Math.min(10, 100 - this.health);
-      this.health += healed;
-      console.log(`🩹 ${this.name} (voleur) se soigne légèrement de ${healed} PV.`);
+// Avec l'Approche 1, c'est facile (createHero lit `roles[role]`) :
+// On ajoute simplement une entrée à `roles` : createHero n'a pas besoin de changer.
+roles.rogue = {
+  attack: function() {
+    const damage = 15;  // Entre guerrier et mage
+    const isCrit = Math.random() > 0.7;  // 30% critique
+    if (isCrit) {
+      console.log(`⚡ CRITIQUE ! ${this.name} (voleur) attaque pour ${damage * 2} dégâts !`);
+      return damage * 2;
+    } else {
+      console.log(`🗡️ ${this.name} (voleur) attaque pour ${damage} dégâts !`);
+      return damage;
     }
+  },
+  heal: function() {
+    const healed = Math.min(10, 100 - this.health);
+    this.health += healed;
+    console.log(`🩹 ${this.name} (voleur) se soigne légèrement de ${healed} PV.`);
   }
 };
 

@@ -4,60 +4,53 @@
 
 ### Réponse
 
-**Raison courte :** `this` se réfère toujours à l'objet actuel, peu importe comment on l'appelle. Si tu utilises `hero.property`, et que tu renommes la variable, ça casse.
+**Raison courte :** dans une méthode appelée sous la forme `objet.methode()`, `this` désigne **l'objet à gauche du point**. La méthode marche donc pour n'importe quel objet qui la possède. Si tu écris `hero2.property` à la place, le nom de l'objet est figé dans le code : la méthode ne sait parler que de `hero2`.
 
 ### Démonstration
 
 ```javascript
-// Option A : avec this
 const hero = {
   name: "Aragorn",
-  attack_with_this: function() {
+  attackWithThis: function() {
     console.log(`${this.name} attaque !`);
   }
 };
 
-// Test 1 : Normal
-hero.attack_with_this();  // "Aragorn attaque !" ✅
-
-// Test 2 : Alias
-const warrior = hero;
-warrior.attack_with_this();  // "Aragorn attaque !" ✅ (marche toujours)
-
-// Test 3 : Renommage
-const myHero = hero;
-myHero.attack_with_this();  // "Aragorn attaque !" ✅ (marche toujours)
-```
-
-```javascript
-// Option B : sans this (mauvais)
 const hero2 = {
   name: "Elsa",
-  attack_without_this: function() {
-    console.log(`${hero2.name} attaque !`);  // Référence directe à hero2
+  attackWithoutThis: function() {
+    console.log(`${hero2.name} attaque !`);
   }
 };
 
-// Test 1 : Normal
-hero2.attack_without_this();  // "Elsa attaque !" ✅
+// Deux nouveaux personnages empruntent chacun une méthode :
+const warrior = { name: "Boromir", attack: hero.attackWithThis };
+const mage = { name: "Gandalf", attack: hero2.attackWithoutThis };
 
-// Test 2 : Alias (CASSÉ)
-const mage = hero2;
-mage.attack_without_this();  // "Elsa attaque !" ... mais on voudrait "Elsa"
-
-// Test 3 : Renommage (CASSÉ)
-const renamed = hero2;
-// Puis on renomme hero2 dans le code...
-// renamed.attack_without_this() affiche "Elsa" mais le code référence hero2
-// Si hero2 n'existe plus → ❌ ERREUR
+warrior.attack();  // "Boromir attaque !"  ✅ this = warrior
+mage.attack();     // "Elsa attaque !"     ❌ on attendait Gandalf : le code dit hero2.name
 ```
 
-### Conclusion
+Réponses aux questions de la quête :
 
-`this` = **flexible**, adapte toujours à l'objet actuel  
-`hero.property` = **rigide**, casse si tu renommes la variable
+1. `warrior.attack()` affiche « Boromir », `mage.attack()` affiche « Elsa ».
+2. `mage.attack()` n'affiche pas « Gandalf » parce que la méthode lit `hero2.name` : elle est collée à l'objet `hero2`, peu importe qui l'appelle.
+3. Si tu renommes `hero2` en `player2` sans modifier la méthode, `hero2` n'existe plus : elle plante avec une `ReferenceError`.
+4. `this` est plus souple parce qu'il s'adapte à l'objet sur lequel la méthode est appelée.
 
-**Dans React :** Tu vas utiliser `this` partout, c'est crucial de comprendre.
+### Attention : `this` dépend de l'appel
+
+`this` n'est pas lié à l'endroit où la méthode est écrite, mais à **la façon dont on l'appelle** :
+
+```javascript
+const f = hero.attackWithThis;
+f();  // plus d'objet à gauche du point : this ne désigne plus hero
+      // (undefined ou erreur selon l'endroit où tu lances le code)
+```
+
+Pour la même raison, on n'écrit pas une méthode d'objet en arrow function : une arrow function n'a pas son propre `this`.
+
+**Plus tard, avec React :** tes composants seront des fonctions et tu n'auras presque jamais besoin de `this`. Comprendre `this` te sert surtout à bien lire le JavaScript « classique » (objets, classes) et à ne pas tomber dans ses pièges.
 
 ---
 
